@@ -1,0 +1,10 @@
+{
+    "banner": {
+      "title": "Innovative ICT & Electrical Solutions",
+      "description": "Empowering businesses with reliable ICT and electrical services tailored to your needs.",
+      "buttonText": "Discover Our Services",
+      "buttonLink": "#services",
+      "backgroundImage": "/home/banner_background.jpg",
+      "logo": "logo.png"
+    }
+  }

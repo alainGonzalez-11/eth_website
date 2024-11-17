@@ -1,8 +1,8 @@
-
+import Banner from '@/components/home/Banner.jsx'
 const Home = () => {
   return (
     <div>
-      <h1>ETH</h1>
+      <Banner/>
     </div>
   )
 }
