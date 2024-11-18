@@ -1,4 +1,10 @@
-
+// import functions and variables to access colors and add new
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+$custome-theme-colors: (
+  'primary': #00b050
+);
+$theme-colors: map-merge($theme-colors, $custome-theme-colors);
 
 // Import Bootstrap and its default variables
 @import '../node_modules/bootstrap/scss/bootstrap';

@@ -1,0 +1,56 @@
+{
+    "title": "Our Services",
+    "description": "Explore the range of services we offer to help your business thrive.",
+    "services": [
+      {
+        "id": 1,
+        "name": "ICT Consulting",
+        "description": "Tailored ICT strategies for business success.",
+        "image": "/services/service_example.jpg",
+        "link": "/services/ict-consulting"
+      },
+      {
+        "id": 2,
+        "name": "Electrical Installation",
+        "description": "Reliable electrical solutions for your business.",
+        "image": "/services/service_example.jpg",
+        "link": "/services/electrical-installation"
+      },
+      {
+        "id": 3,
+        "name": "Cybersecurity",
+        "description": "Protect your business from digital threats.",
+        "image": "/services/service_example2.jpg",
+        "link": "/services/cybersecurity"
+      },
+      {
+        "id": 4,
+        "name": "Data Networking",
+        "description": "High-speed, secure networking solutions.",
+        "image": "/services/service_example.jpg",
+        "link": "/services/data-networking"
+      },
+      {
+        "id": 5,
+        "name": "Maintenance Services",
+        "description": "Keep your systems running efficiently.",
+        "image": "/services/service_example.jpg",
+        "link": "/services/maintenance"
+      },
+      {
+        "id": 6,
+        "name": "Cloud Solutions",
+        "description": "Leverage the power of cloud computing.",
+        "image": "/services/service_example.jpg",
+        "link": "/services/cloud-solutions"
+      },
+      {
+        "id": 7,
+        "name": "Additional Service",
+        "description": "Explore more of what we offer.",
+        "image": "/services/service_example.jpg",
+        "link": "/services/additional-service"
+      }
+    ]
+  }
+  
