@@ -39,11 +39,11 @@ export default function AutoplayCarousel({ images, name, reference }) {
             animation-play-state: paused;
           }
 
-          .carousel-item img {
+          .carousel-track img {
             transition: transform 0.5s ease;
           }
 
-          .carousel-item:hover img {
+          .carousel-track:hover img {
             transform: scale(1.1);
           }
         `}
