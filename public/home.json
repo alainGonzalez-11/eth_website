@@ -1,10 +1,18 @@
 {
-    "banner": {
-      "title": "Innovative ICT & Electrical Solutions",
-      "description": "Empowering businesses with reliable ICT and electrical services tailored to your needs.",
-      "buttonText": "Discover Our Services",
-      "buttonLink": "#services",
-      "backgroundImage": "/home/banner_background.jpg",
-      "logo": "Logo_White.png"
-    }
+  "banner": {
+    "title": "Soluciones Innovadoras en TIC y Electricidad",
+    "description": "Impulsamos negocios con servicios confiables de TIC y electricidad adaptados a sus necesidades.",
+    "buttonText": "Conoce Nuestros Servicios",
+    "buttonLink": "#services",
+    "backgroundImage": "/home/banner_background.jpg",
+    "logo": "Logo_White.png"
+  },
+  "servicesSection": {
+    "title": "Nuestros Servicios",
+    "description": "Descubre nuestra variedad de servicios en TIC y electricidad diseñados para satisfacer las necesidades de tu negocio."
+  },
+  "clientsSection": {
+    "title": "Nuestros Clientes",
+    "description": "Confiados por líderes de la industria para ofrecer excelencia en servicios de TIC y electricidad."
   }
+}

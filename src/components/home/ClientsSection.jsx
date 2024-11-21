@@ -1,97 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import AutoplayCarousel from './AutoplayCarousel';
 
 const ClientsSection = () => {
   const [clients, setClients] = useState([]);
+  const [sectionContent, setSectionContent] = useState({ title: '', description: '' });
+  const carouselRef = useRef(null);
 
   useEffect(() => {
-    fetch('/clients.json') // Update the path as needed
+    // Fetch clients data
+    fetch('/clients.json')
       .then((response) => response.json())
       .then((data) => setClients(data.clients))
-      .catch((error) => console.error('Error loading client data:', error));
+      .catch((error) => console.error('Error loading clients:', error));
+
+    // Fetch section content from home.json
+    fetch('/home.json')
+      .then((response) => response.json())
+      .then((data) => setSectionContent(data.clientsSection))
+      .catch((error) => console.error('Error loading home content:', error));
   }, []);
 
-  if (!clients.length) return <div>Loading...</div>;
-
-  // Group clients into slides (4 per slide for desktop, 3 for tablets, 2 for mobile)
-  const chunkedClients = [];
-  const chunkSize = 4; // Adjust for larger displays
-  for (let i = 0; i < clients.length; i += chunkSize) {
-    chunkedClients.push(clients.slice(i, i + chunkSize));
-  }
+  if (!clients.length || !sectionContent.title) return <div>Loading...</div>;
 
   return (
     <section className="py-5 bg-light">
       <div className="container text-center">
-        <h2 className="mb-3">Our Clients</h2>
-        <p className="mb-4">
-          We are proud to partner with industry-leading organizations. Heres a selection of our valued clients.
-        </p>
-
-        <div
-          id="clientsCarousel"
-          className="carousel slide"
-          data-bs-ride="carousel"
-          data-bs-interval="3000" // Slide every 3 seconds
-        >
-          <div className="carousel-inner">
-            {chunkedClients.map((clientGroup, index) => (
-              <div
-                key={index}
-                className={`carousel-item ${index === 0 ? 'active' : ''}`}
-              >
-                <div className="row justify-content-center">
-                  {clientGroup.map((client) => (
-                    <div
-                      key={client.id}
-                      className="col-6 col-md-4 col-lg-3 d-flex justify-content-center mb-4"
-                    >
-                      <div
-                        className="d-flex justify-content-center align-items-center"
-                        style={{
-                          width: '150px',
-                          height: '100px',
-                          backgroundColor: '#f8f9fa', // Placeholder background
-                          border: '1px solid #dee2e6',
-                        }}
-                      >
-                        <img
-                          src={client.logo}
-                          alt={client.name}
-                          className="img-fluid"
-                          style={{ maxWidth: '100%', maxHeight: '100%' }}
-                          onError={(e) => {
-                            e.target.onerror = null;
-                            e.target.src = '/path-to-placeholder-logo.jpg';
-                          }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Carousel Controls */}
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#clientsCarousel"
-            data-bs-slide="prev"
-          >
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#clientsCarousel"
-            data-bs-slide="next"
-          >
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
+        <h2 className="fw-bold mb-4 text-primary">{sectionContent.title}</h2>
+        <p className="lead mb-5">{sectionContent.description}</p>
+        <AutoplayCarousel
+          images={clients.map((client) => client.logo)}
+          name="clients-carousel"
+          reference={carouselRef}
+        />
       </div>
     </section>
   );
