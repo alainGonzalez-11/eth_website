@@ -72,7 +72,7 @@ const Success = () => {
                           info.data[currentIndex].imagemain,
                           600
                         )}
-                        className='object-fit-contain col-12'
+                        className='object-fit-contain col-5'
                         alt={info.data[currentIndex].name}
                       />
                     </a>
@@ -117,7 +117,7 @@ const Success = () => {
                             .imagemain,
                           600
                         )}
-                        className='object-fit-contain col-12'
+                        className='object-fit-contain col-5'
                         alt={
                           info.data[(currentIndex + 1) % info.data.length].name
                         }
