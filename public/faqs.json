@@ -1,12 +1,53 @@
 {
-    "faqs": [
-      {
-        "serviceId": 1,
-        "questions": [
-          { "question": "What is included in the consulting process?", "answer": "We assess, plan, and implement tailored solutions." },
-          { "question": "How long does an average project take?", "answer": "Typically, 3-6 months depending on scope." }
-        ]
-      }
-    ]
-  }
-  
+  "faqs": [
+    {
+      "serviceId": 1,
+      "questions": [
+        { "question": "¿Qué incluye el proceso de consultoría?", "answer": "Evaluamos, planificamos e implementamos soluciones personalizadas." },
+        { "question": "¿Cuánto tiempo dura un proyecto promedio?", "answer": "Generalmente, de 3 a 6 meses dependiendo del alcance." }
+      ]
+    },
+    {
+      "serviceId": 2,
+      "questions": [
+        { "question": "¿Qué servicios ofrecen en instalaciones eléctricas?", "answer": "Ofrecemos suministro, instalación y mantenimiento de sistemas eléctricos." },
+        { "question": "¿Realizan mantenimiento preventivo?", "answer": "Sí, realizamos tanto mantenimiento preventivo como correctivo." }
+      ]
+    },
+    {
+      "serviceId": 3,
+      "questions": [
+        { "question": "¿Cómo protegen los datos de las empresas?", "answer": "Implementamos medidas avanzadas de ciberseguridad, como firewalls y monitoreo constante." },
+        { "question": "¿Pueden adaptarse a las necesidades de mi negocio?", "answer": "Sí, diseñamos soluciones específicas para cada cliente." }
+      ]
+    },
+    {
+      "serviceId": 4,
+      "questions": [
+        { "question": "¿Qué tipo de redes instalan?", "answer": "Instalamos redes inalámbricas, cableado estructurado y fibra óptica." },
+        { "question": "¿Realizan pruebas después de la instalación?", "answer": "Sí, garantizamos que todo funcione correctamente antes de finalizar el proyecto." }
+      ]
+    },
+    {
+      "serviceId": 5,
+      "questions": [
+        { "question": "¿Qué incluye el mantenimiento industrial?", "answer": "Incluye mantenimiento a estructuras, recubrimientos y equipos industriales." },
+        { "question": "¿Pueden trabajar con aluminio y herrería?", "answer": "Sí, contamos con especialistas en instalación y mantenimiento de estos materiales." }
+      ]
+    },
+    {
+      "serviceId": 6,
+      "questions": [
+        { "question": "¿Qué beneficios ofrece la computación en la nube?", "answer": "Ofrece flexibilidad, escalabilidad y reducción de costos operativos." },
+        { "question": "¿Es seguro migrar a la nube?", "answer": "Sí, implementamos medidas de seguridad para proteger sus datos." }
+      ]
+    },
+    {
+      "serviceId": 7,
+      "questions": [
+        { "question": "¿Qué servicios adicionales ofrecen?", "answer": "Ofrecemos outsourcing, estudios socioeconómicos y evaluaciones psicométricas." },
+        { "question": "¿Realizan capacitaciones?", "answer": "Sí, ofrecemos cursos online, webinars y capacitaciones presenciales." }
+      ]
+    }
+  ]
+}

@@ -5,49 +5,56 @@
       "name": "Consultoría en TIC",
       "description": "Estrategias de TIC personalizadas para el éxito empresarial.",
       "image": "/services/service_example.jpg",
-      "link": "/services/consultoria-tic"
+      "link": "/services/consultoria-tic",
+      "banner": "/services/ict_banner.webp"
     },
     {
       "id": 2,
       "name": "Instalaciones Eléctricas",
       "description": "Soluciones eléctricas confiables para tu negocio.",
       "image": "/services/service_example.jpg",
-      "link": "/services/instalaciones-electricas"
+      "link": "/services/instalaciones-electricas",
+      "banner": "/services/electrical_banner.jpg"
     },
     {
       "id": 3,
       "name": "Ciberseguridad",
       "description": "Protege tu negocio de amenazas digitales.",
       "image": "/services/service_example2.jpg",
-      "link": "/services/ciberseguridad"
+      "link": "/services/ciberseguridad",
+      "banner": "/services/ict_banner.webp"
     },
     {
       "id": 4,
       "name": "Redes de Datos",
       "description": "Soluciones de redes seguras y de alta velocidad.",
       "image": "/services/service_example.jpg",
-      "link": "/services/redes-de-datos"
+      "link": "/services/redes-de-datos",
+      "banner": "/services/electrical_banner.jpg"
     },
     {
       "id": 5,
       "name": "Servicios de Mantenimiento",
       "description": "Mantén tus sistemas funcionando de manera eficiente.",
       "image": "/services/service_example.jpg",
-      "link": "/services/mantenimiento"
+      "link": "/services/mantenimiento",
+      "banner": "/services/ict_banner.webp"
     },
     {
       "id": 6,
       "name": "Soluciones en la Nube",
       "description": "Aprovecha el poder de la computación en la nube.",
       "image": "/services/service_example.jpg",
-      "link": "/services/soluciones-en-la-nube"
+      "link": "/services/soluciones-en-la-nube",
+      "banner": "/services/electrical_banner.jpg"
     },
     {
       "id": 7,
       "name": "Servicio Adicional",
       "description": "Descubre más de lo que ofrecemos.",
       "image": "/services/service_example.jpg",
-      "link": "/services/servicio-adicional"
+      "link": "/services/servicio-adicional",
+      "banner": "/services/ict_banner.webp"
     }
   ]
 }

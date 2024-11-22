@@ -87,7 +87,7 @@ const ServicePage = () => {
 
   return (
     <div>
-      <Banner title={service.name} />
+      <Banner title={service.name} banner={service.banner} />
       <BranchesSection
         branches={branches}
         onBranchClick={handleBranchClick} // Pass click handler

@@ -11,12 +11,14 @@ const CarouselSection = ({ branch }) => {
             <Carousel>
               {branch.images.map((image, index) => (
                 <Carousel.Item key={index}>
+                <div className="ratio ratio-16x9">
                   <img
                     src={image}
-                    className='d-block w-100 rounded shadow'
+                    className="d-block w-100 rounded shadow object-fit-cover"
                     alt={`Slide ${index + 1}`}
                   />
-                </Carousel.Item>
+                </div>
+              </Carousel.Item>
               ))}
             </Carousel>
           </div>
