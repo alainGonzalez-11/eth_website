@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
+
 
 const ServiceCard = ({ image, name, description, link }) => {
   const [imgSrc, setImgSrc] = useState(image)
@@ -10,8 +12,8 @@ const ServiceCard = ({ image, name, description, link }) => {
         {/* Aspect Ratio Wrapper with Grayscale Transition */}
         
 
-        <a
-          href={link}
+        <Link
+          to={link}
           className='d-block ratio ratio-4x3 position-relative'
           style={{ overflow: 'hidden' }}
         >
@@ -46,14 +48,14 @@ const ServiceCard = ({ image, name, description, link }) => {
           >
             <span className='text-white fw-bold'>Learn More</span>
           </div>
-        </a>
+        </Link>
 
         <div className='card-body text-center'>
           <h5 className='card-title'>{name}</h5>
           <p className='card-text'>{description}</p>
-          <a href={link} className='btn btn-primary rounded-0'>
+          <Link to={link} className='btn btn-primary rounded-0'>
             Learn More
-          </a>
+          </Link>
         </div>
       </div>
     </div>

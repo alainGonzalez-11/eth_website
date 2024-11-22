@@ -1,0 +1,12 @@
+{
+    "faqs": [
+      {
+        "serviceId": 1,
+        "questions": [
+          { "question": "What is included in the consulting process?", "answer": "We assess, plan, and implement tailored solutions." },
+          { "question": "How long does an average project take?", "answer": "Typically, 3-6 months depending on scope." }
+        ]
+      }
+    ]
+  }
+  

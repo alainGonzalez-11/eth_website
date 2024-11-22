@@ -1,0 +1,165 @@
+{
+    "branches": [
+      {
+        "id": 1,
+        "serviceId": 1,
+        "name": "Estrategias de TI",
+        "description": "Diseño de estrategias de TI alineadas a los objetivos del negocio.",
+        "icon": "bi-gear-fill",
+        "images": ["/branches/estrategias1.jpg", "/branches/estrategias2.jpg"]
+      },
+      {
+        "id": 2,
+        "serviceId": 1,
+        "name": "Optimización de Procesos",
+        "description": "Optimización de procesos empresariales mediante herramientas TIC.",
+        "icon": "bi-gear-fill",
+        "images": ["/branches/procesos1.jpg", "/branches/procesos2.jpg"]
+      },
+      {
+        "id": 3,
+        "serviceId": 1,
+        "name": "Asesoramiento en Transformación Digital",
+        "description": "Guía completa para digitalizar tu negocio.",
+        "icon": "bi-gear-fill",
+        "images": ["/branches/digital1.jpg", "/branches/digital2.jpg"]
+      },
+      {
+        "id": 4,
+        "serviceId": 2,
+        "name": "Sistemas de Iluminación",
+        "description": "Diseño e instalación de sistemas de iluminación eficientes.",
+        "icon": "bi-gear-fill",
+        "images": ["/branches/iluminacion1.jpg", "/branches/iluminacion2.jpg"]
+      },
+      {
+        "id": 5,
+        "serviceId": 2,
+        "name": "Instalaciones de Baja Tensión",
+        "description": "Soluciones seguras para instalaciones de baja tensión.",
+        "icon": "bi-diagram-3-fill",
+        "images": ["/branches/baja1.jpg", "/branches/baja2.jpg"]
+      },
+      {
+        "id": 6,
+        "serviceId": 2,
+        "name": "Sistemas de Energía Renovable",
+        "description": "Integración de sistemas eléctricos con fuentes renovables.",
+        "icon": "bi-diagram-3-fill",
+        "images": ["/branches/renovable1.jpg", "/branches/renovable2.jpg"]
+      },
+      {
+        "id": 7,
+        "serviceId": 3,
+        "name": "Análisis de Vulnerabilidades",
+        "description": "Identificación y mitigación de riesgos de seguridad.",
+        "icon": "/branches/vulnerabilidades.png",
+        "images": ["/branches/vulnerabilidad1.jpg", "/branches/vulnerabilidad2.jpg"]
+      },
+      {
+        "id": 8,
+        "serviceId": 3,
+        "name": "Firewall y Monitoreo",
+        "description": "Implementación de firewalls y monitoreo constante.",
+        "icon": "/branches/firewall.png",
+        "images": ["/branches/firewall1.jpg", "/branches/firewall2.jpg"]
+      },
+      {
+        "id": 9,
+        "serviceId": 3,
+        "name": "Capacitación en Ciberseguridad",
+        "description": "Entrenamiento para equipos en prácticas de seguridad.",
+        "icon": "/branches/capacitacion-ciberseguridad.png",
+        "images": ["/branches/capacitacion1.jpg", "/branches/capacitacion2.jpg"]
+      },
+      {
+        "id": 10,
+        "serviceId": 4,
+        "name": "Redes Inalámbricas",
+        "description": "Configuración de redes inalámbricas seguras y rápidas.",
+        "icon": "/branches/inalambricas.png",
+        "images": ["/branches/inalambricas1.jpg", "/branches/inalambricas2.jpg"]
+      },
+      {
+        "id": 11,
+        "serviceId": 4,
+        "name": "Conexiones de Fibra Óptica",
+        "description": "Soluciones avanzadas con fibra óptica.",
+        "icon": "/branches/fibra-optica.png",
+        "images": ["/branches/fibra1.jpg", "/branches/fibra2.jpg"]
+      },
+      {
+        "id": 12,
+        "serviceId": 4,
+        "name": "Redes Empresariales",
+        "description": "Diseño e implementación de redes corporativas robustas.",
+        "icon": "/branches/redes-empresariales.png",
+        "images": ["/branches/empresariales1.jpg", "/branches/empresariales2.jpg"]
+      },
+      {
+        "id": 13,
+        "serviceId": 5,
+        "name": "Mantenimiento Preventivo",
+        "description": "Estrategias para evitar fallos futuros.",
+        "icon": "/branches/mantenimiento-preventivo.png",
+        "images": ["/branches/preventivo1.jpg", "/branches/preventivo2.jpg"]
+      },
+      {
+        "id": 14,
+        "serviceId": 5,
+        "name": "Mantenimiento Correctivo",
+        "description": "Reparación de sistemas en tiempo récord.",
+        "icon": "/branches/mantenimiento-correctivo.png",
+        "images": ["/branches/correctivo1.jpg", "/branches/correctivo2.jpg"]
+      },
+      {
+        "id": 15,
+        "serviceId": 6,
+        "name": "Almacenamiento en la Nube",
+        "description": "Soluciones de almacenamiento seguro y escalable.",
+        "icon": "/branches/almacenamiento-nube.png",
+        "images": ["/branches/almacenamiento1.jpg", "/branches/almacenamiento2.jpg"]
+      },
+      {
+        "id": 16,
+        "serviceId": 6,
+        "name": "Computación Serverless",
+        "description": "Optimización de aplicaciones con infraestructura serverless.",
+        "icon": "/branches/serverless.png",
+        "images": ["/branches/serverless1.jpg", "/branches/serverless2.jpg"]
+      },
+      {
+        "id": 17,
+        "serviceId": 6,
+        "name": "Gestión de Contenedores",
+        "description": "Automatización de despliegues con Docker y Kubernetes.",
+        "icon": "/branches/contenedores.png",
+        "images": ["/branches/contenedores1.jpg", "/branches/contenedores2.jpg"]
+      },
+      {
+        "id": 18,
+        "serviceId": 7,
+        "name": "Personalización de Servicios",
+        "description": "Adaptamos nuestros servicios a tus necesidades únicas.",
+        "icon": "/branches/personalizacion.png",
+        "images": ["/branches/personalizacion1.jpg", "/branches/personalizacion2.jpg"]
+      },
+      {
+        "id": 19,
+        "serviceId": 7,
+        "name": "Soporte Técnico",
+        "description": "Soporte técnico 24/7 para tus proyectos.",
+        "icon": "/branches/soporte-tecnico.png",
+        "images": ["/branches/soporte1.jpg", "/branches/soporte2.jpg"]
+      },
+      {
+        "id": 20,
+        "serviceId": 7,
+        "name": "Auditorías de Sistemas",
+        "description": "Evaluamos el estado y seguridad de tus sistemas.",
+        "icon": "/branches/auditorias.png",
+        "images": ["/branches/auditorias1.jpg", "/branches/auditorias2.jpg"]
+      }
+    ]
+  }
+  
