@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-
-const ServiceCard = ({ image, name, description, link }) => {
+const ServiceCard = ({ image, name, description, link, details }) => {
   const [imgSrc, setImgSrc] = useState(image)
   const placeholderImage = '/path-to-placeholder-image.jpg'
 
@@ -10,7 +9,6 @@ const ServiceCard = ({ image, name, description, link }) => {
     <div className='col-md-4 col-sm-6 mb-4'>
       <div className='card h-100 bg-transparent border-0'>
         {/* Aspect Ratio Wrapper with Grayscale Transition */}
-        
 
         <Link
           to={link}
@@ -46,15 +44,15 @@ const ServiceCard = ({ image, name, description, link }) => {
             onMouseOver={e => (e.currentTarget.style.opacity = 1)}
             onMouseOut={e => (e.currentTarget.style.opacity = 0)}
           >
-            <span className='text-white fw-bold'>Learn More</span>
+            <span className='text-white fw-bold'> {details}</span>
           </div>
         </Link>
 
         <div className='card-body text-center'>
           <h5 className='card-title'>{name}</h5>
           <p className='card-text'>{description}</p>
-          <Link to={link} className='btn btn-primary rounded-0'>
-            Learn More
+          <Link to={link} className='btn btn-outline-primary rounded-0'>
+            {details}
           </Link>
         </div>
       </div>

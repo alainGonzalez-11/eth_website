@@ -39,12 +39,13 @@ const ServicesSection = () => {
               name={service.name}
               description={service.description}
               link={service.link}
+              details={sectionContent.detailsLabel}
             />
           ))}
         </div>
         {visibleServices < servicesData.length && (
           <button className="btn btn-primary mt-4 px-6 rounded-0 text-light" onClick={loadMoreServices}>
-            Load More
+            {sectionContent.moreLabel}
           </button>
         )}
       </div>
