@@ -41,6 +41,19 @@ $theme-colors: map-merge($theme-colors, $custome-theme-colors);
 
 .feature-icon-wrapper {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px); /* Slight movement effect */
+
+    .feature-icon-container {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature-icon {
+      transform: scale(1.2);
+    }
+  }
 }
 
 .feature-icon-container {
@@ -57,18 +70,4 @@ $theme-colors: map-merge($theme-colors, $custome-theme-colors);
 .feature-icon {
   color: #4e73df; /* Primary blue color */
   transition: transform 0.3s ease, color 0.3s ease;
-}
-
-/* Hover effect with Bootstrap's text-color and bg-color utilities */
-.feature-icon-wrapper:hover .feature-icon-container {
-  transform: scale(1.1);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.feature-icon-wrapper:hover .feature-icon {
-  transform: scale(1.2);
-}
-
-.feature-icon-wrapper:hover {
-  transform: translateY(-5px); /* Slight movement effect */
 }
