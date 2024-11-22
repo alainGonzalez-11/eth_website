@@ -1,45 +1,99 @@
 {
-    "features": [
-      {
-        "serviceId": 1,
-        "features": [
-          {
-            "title": "Customizable Strategies",
-            "description": "Tailored strategies for unique business needs.",
-            "iconClass": "fas fa-cogs",
-            "image": "/images/feature1.jpg"
-          },
-          {
-            "title": "Expert Guidance",
-            "description": "Get expert advice from industry leaders.",
-            "iconClass": "fas fa-lightbulb",
-            "image": "/images/feature2.jpg"
-          },
-          {
-            "title": "24/7 Support",
-            "description": "Continuous support for your business operations.",
-            "iconClass": "fas fa-headset",
-            "image": "/images/feature3.jpg"
-          }
-        ]
-      },
-      {
-        "serviceId": 2,
-        "features": [
-          {
-            "title": "Electrical Safety",
-            "description": "Ensuring top-notch electrical safety standards.",
-            "iconClass": "fas fa-bolt",
-            "image": "/images/feature4.jpg"
-          },
-          {
-            "title": "Energy Efficiency",
-            "description": "Maximizing efficiency with advanced technology.",
-            "iconClass": "fas fa-lightning-bolt",
-            "image": "/images/feature5.jpg"
-          }
-        ]
-      }
-    ]
-  }
-  
+  "features": [
+    {
+      "serviceId": 1,
+      "features": [
+        {
+          "title": "Estrategias Personalizadas",
+          "description": "Estrategias adaptadas a las necesidades únicas de tu negocio.",
+          "iconClass": "fas fa-cogs"
+        },
+        {
+          "title": "Asesoría de Expertos",
+          "description": "Recibe orientación experta de líderes en la industria.",
+          "iconClass": "fas fa-lightbulb"
+        },
+        {
+          "title": "Soporte 24/7",
+          "description": "Apoyo continuo para las operaciones de tu negocio.",
+          "iconClass": "fas fa-headset"
+        }
+      ]
+    },
+    {
+      "serviceId": 2,
+      "features": [
+        {
+          "title": "Seguridad Eléctrica",
+          "description": "Garantizando estándares de seguridad eléctrica de primer nivel.",
+          "iconClass": "fas fa-bolt"
+        },
+        {
+          "title": "Eficiencia Energética",
+          "description": "Maximizando la eficiencia con tecnología avanzada.",
+          "iconClass": "fas fa-lightning-bolt"
+        }
+      ]
+    },
+    {
+      "serviceId": 3,
+      "features": [
+        {
+          "title": "Protección Avanzada",
+          "description": "Herramientas modernas para proteger tu negocio digital.",
+          "iconClass": "fas fa-shield-alt"
+        },
+        {
+          "title": "Monitoreo Continuo",
+          "description": "Supervisión 24/7 para detectar y prevenir amenazas.",
+          "iconClass": "fas fa-eye"
+        }
+      ]
+    },
+    {
+      "serviceId": 4,
+      "features": [
+        {
+          "title": "Redes de Alta Velocidad",
+          "description": "Soluciones para conexiones rápidas y confiables.",
+          "iconClass": "fas fa-network-wired"
+        },
+        {
+          "title": "Seguridad de Datos",
+          "description": "Mantén tu información protegida en la red.",
+          "iconClass": "fas fa-lock"
+        }
+      ]
+    },
+    {
+      "serviceId": 5,
+      "features": [
+        {
+          "title": "Mantenimiento Preventivo",
+          "description": "Evita fallos con revisiones periódicas.",
+          "iconClass": "fas fa-tools"
+        },
+        {
+          "title": "Servicio Rápido",
+          "description": "Atención inmediata para resolver problemas técnicos.",
+          "iconClass": "fas fa-wrench"
+        }
+      ]
+    },
+    {
+      "serviceId": 6,
+      "features": [
+        {
+          "title": "Soluciones Escalables",
+          "description": "Adapta la nube al crecimiento de tu negocio.",
+          "iconClass": "fas fa-cloud"
+        },
+        {
+          "title": "Acceso Remoto",
+          "description": "Trabaja desde cualquier lugar de forma segura.",
+          "iconClass": "fas fa-laptop"
+        }
+      ]
+    }
+  ]
+}
