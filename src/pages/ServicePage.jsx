@@ -6,7 +6,7 @@ import CarouselSection from '../components/service/CarouselSection'
 import ReviewsSection from '../components/service/ReviewsSection'
 import FAQSection from '../components/service/FAQSection'
 import CTASection from '../components/service/CTASection'
-import ContactSection from '../components/service/ContactSection'
+import FeaturesSection from '../components/service/FeaturesSection'; // Import the updated Features Section
 
 const ServicePage = () => {
   const { serviceUrl } = useParams() // Get dynamic URL parameter
@@ -15,7 +15,8 @@ const ServicePage = () => {
   const [selectedBranch, setSelectedBranch] = useState(null) // Track the selected branch
   const [faqs, setFaqs] = useState([])
   const [cta, setCta] = useState({})
-  const [contact, setContact] = useState({})
+  const [features, setFeatures] = useState([]);
+
 
   // Fetch service data
   useEffect(() => {
@@ -49,13 +50,13 @@ const ServicePage = () => {
         })
         .catch(err => console.log('Error fetching CTA:', err))
 
-      // Fetch Contact Data
-      fetch('/contact.json')
-        .then(res => res.json())
-        .then(data => {
-          setContact(data.contact || {})
-        })
-        .catch(err => console.log('Error fetching Contact:', err))
+       // Fetch features data for the specific service
+       fetch('/features.json')
+       .then((res) => res.json())
+       .then((data) => {
+         const relatedFeatures = data.features.find((f) => f.serviceId === service?.id)?.features || [];
+         setFeatures(relatedFeatures);
+       });
     }
   }, [service]) // Only fetch these once the service is loaded
 
@@ -69,7 +70,7 @@ const ServicePage = () => {
             b => b.serviceId === service.id
           )
           setBranches(relatedBranches)
-
+          console.log('Changing  branches')
           // If no branch is selected, default to the first one
           if (!selectedBranch) {
             setSelectedBranch(relatedBranches[0])
@@ -94,6 +95,7 @@ const ServicePage = () => {
         selectedBranchId={selectedBranch.id} // Highlight selected branch
       />
       <CarouselSection branch={selectedBranch} />
+      <FeaturesSection features={features} />
       <ReviewsSection />
       <FAQSection faqs={faqs} />
       <CTASection cta={cta} />
