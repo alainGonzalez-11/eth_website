@@ -1,16 +1,16 @@
-import React from 'react';
-
+/* eslint-disable react/prop-types */
 const FAQSection = ({ faqs }) => {
   if (!faqs.length) return null;
+  
 
   return (
     <section className="faq-section py-5">
       <div className="container">
         <h2 className="text-center mb-4">Frequently Asked Questions</h2>
         <div className="accordion" id="faqAccordion">
-          {faqs.map((faq, index) => (
+          {faqs[0].questions.map((faq, index) => (
             <div key={index} className="accordion-item">
-              <h2 className="accordion-header" id={`heading${index}`}>
+              <h3 className="accordion-header" id={`heading${index}`}>
                 <button
                   className="accordion-button collapsed"
                   type="button"
@@ -21,7 +21,7 @@ const FAQSection = ({ faqs }) => {
                 >
                   {faq.question}
                 </button>
-              </h2>
+              </h3>
               <div
                 id={`collapse${index}`}
                 className="accordion-collapse collapse"

@@ -13,9 +13,9 @@ const ServicePage = () => {
   const [service, setService] = useState(null)
   const [branches, setBranches] = useState([])
   const [selectedBranch, setSelectedBranch] = useState(null) // Track the selected branch
-  const [faqs, setFaqs] = useState([]);
-  const [cta, setCta] = useState({});
-  const [contact, setContact] = useState({});
+  const [faqs, setFaqs] = useState([])
+  const [cta, setCta] = useState({})
+  const [contact, setContact] = useState({})
 
   // Fetch service data
   useEffect(() => {
@@ -29,36 +29,35 @@ const ServicePage = () => {
       })
   }, [service?.id, serviceUrl])
 
+  // Fetch service data
+  useEffect(() => {
+    if (service) {
+      // Fetch FAQs
+      fetch('/faqs.json')
+        .then(res => res.json())
+        .then(data => {
+          const relatedFaqs = data.faqs.filter(f => f.serviceId === service.id)
+          setFaqs(relatedFaqs)
+        })
+        .catch(err => console.log('Error fetching FAQs:', err))
 
-    // Fetch service data
-    useEffect(() => {
-        if (service) {
-          // Fetch FAQs
-          fetch('/faqs.json')
-            .then((res) => res.json())
-            .then((data) => {
-              const relatedFaqs = data.faqs.filter((f) => f.serviceId === service.id);
-              setFaqs(relatedFaqs || []);
-            })
-            .catch((err) => console.log("Error fetching FAQs:", err));
-      
-          // Fetch CTA Data
-          fetch('/cta.json')
-            .then((res) => res.json())
-            .then((data) => {
-              setCta(data.cta || {}); // Default to empty object if CTA data is missing
-            })
-            .catch((err) => console.log("Error fetching CTA:", err));
-      
-          // Fetch Contact Data
-          fetch('/contact.json')
-            .then((res) => res.json())
-            .then((data) => {
-              setContact(data.contact || {});
-            })
-            .catch((err) => console.log("Error fetching Contact:", err));
-        }
-      }, [service]); // Only fetch these once the service is loaded
+      // Fetch CTA Data
+      fetch('/cta.json')
+        .then(res => res.json())
+        .then(data => {
+          setCta(data.cta || {}) // Default to empty object if CTA data is missing
+        })
+        .catch(err => console.log('Error fetching CTA:', err))
+
+      // Fetch Contact Data
+      fetch('/contact.json')
+        .then(res => res.json())
+        .then(data => {
+          setContact(data.contact || {})
+        })
+        .catch(err => console.log('Error fetching Contact:', err))
+    }
+  }, [service]) // Only fetch these once the service is loaded
 
   // Fetch branches data after the service is loaded
   useEffect(() => {
