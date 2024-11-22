@@ -26,3 +26,14 @@ $theme-colors: map-merge($theme-colors, $custome-theme-colors);
   border-color: #007bff;
   background-color: #e6f7ff;
 }
+
+.footer-links a {
+  text-decoration: none; /* Removes underline by default */
+  color: white; /* Ensures links are visible on a dark background */
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.footer-links a:hover {
+  text-decoration: underline; /* Adds underline on hover */
+  color: #00b050; /* Optional: Changes link color to Bootstrap primary color */
+}

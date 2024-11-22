@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import ServiceCard from './ServiceCard';
 
+
 const ServicesSection = () => {
   const [servicesData, setServicesData] = useState([]);
   const [sectionContent, setSectionContent] = useState({ title: '', description: '' });

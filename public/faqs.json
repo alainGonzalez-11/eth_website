@@ -1,6 +1,7 @@
 {
   "faqs": [
     {
+      "title": "Preguntas frecuentes",
       "serviceId": 1,
       "questions": [
         { "question": "¿Qué incluye el proceso de consultoría?", "answer": "Evaluamos, planificamos e implementamos soluciones personalizadas." },
@@ -8,6 +9,7 @@
       ]
     },
     {
+      "title": "Preguntas frecuentes",
       "serviceId": 2,
       "questions": [
         { "question": "¿Qué servicios ofrecen en instalaciones eléctricas?", "answer": "Ofrecemos suministro, instalación y mantenimiento de sistemas eléctricos." },
@@ -15,6 +17,7 @@
       ]
     },
     {
+      "title": "Preguntas frecuentes",
       "serviceId": 3,
       "questions": [
         { "question": "¿Cómo protegen los datos de las empresas?", "answer": "Implementamos medidas avanzadas de ciberseguridad, como firewalls y monitoreo constante." },
@@ -22,6 +25,7 @@
       ]
     },
     {
+      "title": "Preguntas frecuentes",
       "serviceId": 4,
       "questions": [
         { "question": "¿Qué tipo de redes instalan?", "answer": "Instalamos redes inalámbricas, cableado estructurado y fibra óptica." },
@@ -29,6 +33,7 @@
       ]
     },
     {
+      "title": "Preguntas frecuentes",
       "serviceId": 5,
       "questions": [
         { "question": "¿Qué incluye el mantenimiento industrial?", "answer": "Incluye mantenimiento a estructuras, recubrimientos y equipos industriales." },
@@ -36,6 +41,7 @@
       ]
     },
     {
+      "title": "Preguntas frecuentes",
       "serviceId": 6,
       "questions": [
         { "question": "¿Qué beneficios ofrece la computación en la nube?", "answer": "Ofrece flexibilidad, escalabilidad y reducción de costos operativos." },
@@ -43,6 +49,7 @@
       ]
     },
     {
+      "title": "Preguntas frecuentes",
       "serviceId": 7,
       "questions": [
         { "question": "¿Qué servicios adicionales ofrecen?", "answer": "Ofrecemos outsourcing, estudios socioeconómicos y evaluaciones psicométricas." },

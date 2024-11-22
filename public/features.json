@@ -1,0 +1,45 @@
+{
+    "features": [
+      {
+        "serviceId": 1,
+        "features": [
+          {
+            "title": "Customizable Strategies",
+            "description": "Tailored strategies for unique business needs.",
+            "iconClass": "fas fa-cogs",
+            "image": "/images/feature1.jpg"
+          },
+          {
+            "title": "Expert Guidance",
+            "description": "Get expert advice from industry leaders.",
+            "iconClass": "fas fa-lightbulb",
+            "image": "/images/feature2.jpg"
+          },
+          {
+            "title": "24/7 Support",
+            "description": "Continuous support for your business operations.",
+            "iconClass": "fas fa-headset",
+            "image": "/images/feature3.jpg"
+          }
+        ]
+      },
+      {
+        "serviceId": 2,
+        "features": [
+          {
+            "title": "Electrical Safety",
+            "description": "Ensuring top-notch electrical safety standards.",
+            "iconClass": "fas fa-bolt",
+            "image": "/images/feature4.jpg"
+          },
+          {
+            "title": "Energy Efficiency",
+            "description": "Maximizing efficiency with advanced technology.",
+            "iconClass": "fas fa-lightning-bolt",
+            "image": "/images/feature5.jpg"
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -97,7 +97,6 @@ const ServicePage = () => {
       <ReviewsSection />
       <FAQSection faqs={faqs} />
       <CTASection cta={cta} />
-      <ContactSection contact={contact} />
     </div>
   )
 }

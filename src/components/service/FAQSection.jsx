@@ -6,7 +6,7 @@ const FAQSection = ({ faqs }) => {
   return (
     <section className="faq-section py-5">
       <div className="container">
-        <h2 className="text-center mb-4">Frequently Asked Questions</h2>
+        <h2 className="text-center mb-4">{faqs[0].title}</h2>
         <div className="accordion" id="faqAccordion">
           {faqs[0].questions.map((faq, index) => (
             <div key={index} className="accordion-item">
