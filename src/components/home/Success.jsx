@@ -4,16 +4,6 @@ import { Carousel } from 'bootstrap'
 import info from '@/content/Sponsors.json'
 
 const Success = () => {
-  const opinions = info.data.reduce((acc, opinion) => {
-    acc[opinion.name] = {
-      name: opinion.name,
-      page: opinion.page,
-      image: opinion.imagemain,
-      description: opinion.description
-    }
-    return acc
-  }, {})
-
   const carouselRef1 = useRef(null)
   const carouselRef2 = useRef(null)
 
