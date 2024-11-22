@@ -24,7 +24,7 @@ const ClientsSection = () => {
 
   return (
     <section className="py-5 bg-light">
-      <div className="container text-center">
+      <div className="container-fluid text-center bg-body-secondary py-5">
         <h2 className="fw-bold mb-4 text-primary">{sectionContent.title}</h2>
         <p className="lead mb-5">{sectionContent.description}</p>
         <AutoplayCarousel

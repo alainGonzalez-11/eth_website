@@ -29,7 +29,7 @@ const Banner = () => {
         <div className="text-start">
           <img src={content.logo} alt="Company Logo" className="mb-4 w-50" />
           <p className="lead">{content.description}</p>
-          <a href={content.buttonLink} className="btn btn-primary btn-lg mt-3">
+          <a href={content.buttonLink} className="btn btn-primary btn-lg mt-3 rounded-0">
             {content.buttonText}
           </a>
         </div>

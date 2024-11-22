@@ -1,70 +1,69 @@
 {
-    "clients": [
-      {
-        "id": 1,
-        "name": "Client A",
-        "logo": "logo.png"
-      },
-      {
-        "id": 2,
-        "name": "Client B",
-        "logo": "logo.png"
-      },
-      {
-        "id": 3,
-        "name": "Client C",
-        "logo": "logo.png"
-      },
-      {
-        "id": 4,
-        "name": "Client D",
-        "logo": "logo.png"
-      },
-      {
-        "id": 2,
-        "name": "Client B",
-        "logo": "Logo_White.png"
-      },
-      {
-        "id": 3,
-        "name": "Client C",
-        "logo": "logo.png"
-      },
-      {
-        "id": 4,
-        "name": "Client D",
-        "logo": "logo.png"
-      },
-      {
-        "id": 2,
-        "name": "Client B",
-        "logo": "logo.png"
-      },
-      {
-        "id": 3,
-        "name": "Client C",
-        "logo": "logo.png"
-      },
-      {
-        "id": 4,
-        "name": "Client D",
-        "logo": "logo.png"
-      },
-      {
-        "id": 2,
-        "name": "Client B",
-        "logo": "logo.png"
-      },
-      {
-        "id": 3,
-        "name": "Client C",
-        "logo": "logo.png"
-      },
-      {
-        "id": 4,
-        "name": "Client D",
-        "logo": "logo.png"
-      }
-    ]
-  }
-  
+  "clients": [
+    {
+      "id": 1,
+      "name": "Client A",
+      "logo": "logo.png"
+    },
+    {
+      "id": 2,
+      "name": "Client B",
+      "logo": "vite.svg"
+    },
+    {
+      "id": 3,
+      "name": "Client C",
+      "logo": "logo.png"
+    },
+    {
+      "id": 4,
+      "name": "Client D",
+      "logo": "logo.png"
+    },
+    {
+      "id": 2,
+      "name": "Client B",
+      "logo": "Logo_White.png"
+    },
+    {
+      "id": 3,
+      "name": "Client C",
+      "logo": "logo.png"
+    },
+    {
+      "id": 4,
+      "name": "Client D",
+      "logo": "logo.png"
+    },
+    {
+      "id": 2,
+      "name": "Client B",
+      "logo": "logo.png"
+    },
+    {
+      "id": 3,
+      "name": "Client C",
+      "logo": "logo.png"
+    },
+    {
+      "id": 4,
+      "name": "Client D",
+      "logo": "logo.png"
+    },
+    {
+      "id": 2,
+      "name": "Client B",
+      "logo": "logo.png"
+    },
+    {
+      "id": 3,
+      "name": "Client C",
+      "logo": "logo.png"
+    },
+    {
+      "id": 4,
+      "name": "Client D",
+      "logo": "logo.png"
+    }
+  ]
+}

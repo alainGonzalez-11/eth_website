@@ -9,7 +9,9 @@
   },
   "servicesSection": {
     "title": "Nuestros Servicios",
-    "description": "Descubre nuestra variedad de servicios en TIC y electricidad diseñados para satisfacer las necesidades de tu negocio."
+    "description": "Descubre nuestra variedad de servicios en TIC y electricidad diseñados para satisfacer las necesidades de tu negocio.",
+    "detailsLabel": "Saber más",
+    "moreLabel": "Ver más servicios"
   },
   "clientsSection": {
     "title": "Nuestros Clientes",

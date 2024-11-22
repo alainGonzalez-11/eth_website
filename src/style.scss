@@ -12,3 +12,62 @@ $theme-colors: map-merge($theme-colors, $custome-theme-colors);
 .text-justify {
   text-align: justify;
 }
+
+.branch-button {
+  margin: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.branch-button.active {
+  border-color: #007bff;
+  background-color: #e6f7ff;
+}
+
+.footer-links a {
+  text-decoration: none; /* Removes underline by default */
+  color: white; /* Ensures links are visible on a dark background */
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.footer-links a:hover {
+  text-decoration: underline; /* Adds underline on hover */
+  color: #00b050; /* Optional: Changes link color to Bootstrap primary color */
+}
+
+
+.feature-icon-wrapper {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px); /* Slight movement effect */
+
+    .feature-icon-container {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature-icon {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.feature-icon-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-icon {
+  color: #4e73df; /* Primary blue color */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
