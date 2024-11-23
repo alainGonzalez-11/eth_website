@@ -52,9 +52,10 @@ const Header = () => {
     <nav className='navbar navbar-expand-lg navbar-dark bg-dark py-1 px-5 container-fluid d-flex justify-content-between align-items-center content fixed-top'>
       <NavLink to='/' className='my-2 col-8 col-sm-7 col-lg-3'>
         <img
-          src={ImportDrivePhoto(info.data[0].logo, 600)}
+          src={"./logo.png"}
           alt={info.data[0].name}
           className='w-100'
+          style={{'width':'400px'}}
         />
       </NavLink>
 

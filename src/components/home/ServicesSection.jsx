@@ -30,7 +30,7 @@ const ServicesSection = () => {
   return (
     <section className="py-5 bg-light">
       <div className="container text-center">
-        <h2 className="fw-bold mb-4 text-primary">{sectionContent.title}</h2>
+        <h2 className="fw-bold mb-4 text-primary" id='services'>{sectionContent.title}</h2>
         <p className="mb-5">{sectionContent.description}</p>
         <div className="row">
           {servicesData.slice(0, visibleServices).map((service) => (
