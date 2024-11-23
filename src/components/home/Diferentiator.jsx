@@ -20,7 +20,7 @@ const Diferentiator = () => {
     <section className='py-5 bg-light'>
       <div className='container py-5 text-center'>
         <div className='row justify-content-center mx-0 position-relative'>
-          <h2 className='fw-bold text-primary juestify-content-center mb-3'>
+          <h2 className='fw-bold text-primary justify-content-center mb-3'>
             {info.data[0].title}
           </h2>
           <div className='row justify-content-center justify-content-md-end position-absolute top-0 end-0 mx-0'>

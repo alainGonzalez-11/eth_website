@@ -1,5 +1,5 @@
 /* eslint-disable no-new */
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Carousel } from 'bootstrap'
 import info from '@/content/Sponsors.json'
 

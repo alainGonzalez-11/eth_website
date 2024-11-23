@@ -48,10 +48,10 @@ const Contact = () => {
   }
 
   return (
-    <div className='container-lg h-full align-content-center py-4'>
-      <div className='row mx-0 mt-5 mt-md-0 mt-lg-5'>
+    <div className='container-fluid bg-body-secondary align-content-center h-full py-4'>
+      <div className='row mx-0 mt-5 mt-md-0 mt-lg-5 justify-content-center'>
         <div className='col-12 col-md-6'>
-          <h2 className='display-3 text-light fw-semibold mb-5'>Contacto</h2>
+          <h2 className='text-primary text-center fw-bold mb-3'>Contáctanos</h2>
           <div className='contact-container'>
             <form
               onSubmit={handleSubmit(whenSubmit)}
@@ -61,9 +61,7 @@ const Contact = () => {
             >
               <div className='row'>
                 <div className='d-flex flex-column col-6'>
-                  <label htmlFor='firstName' className='text-light'>
-                    Nombre
-                  </label>
+                  <label htmlFor='firstName'>Nombre</label>
                   <input
                     type='text'
                     name='firstName'
@@ -73,7 +71,7 @@ const Contact = () => {
                       required: true,
                       maxlength: 20
                     })}
-                    className='rounded-3 my-2 p-2 border border-0'
+                    className='my-2 p-2 border border-0'
                   />
                   <p className='text-warning text-center'>
                     {errors.firstName?.message}
@@ -81,16 +79,14 @@ const Contact = () => {
                 </div>
 
                 <div className='d-flex flex-column col-6'>
-                  <label htmlFor='lastName' className='text-light'>
-                    Apellido
-                  </label>
+                  <label htmlFor='lastName'>Apellido</label>
                   <input
                     type='text'
                     name='lastName'
                     placeholder='Tu apellido'
                     id='lastName'
                     {...register('lastName', { required: true, maxlength: 20 })}
-                    className='rounded-3 my-2 p-2 border border-0'
+                    className='my-2 p-2 border border-0'
                   />
                   <p className='text-warning text-center'>
                     {errors.lastName?.message}
@@ -99,7 +95,7 @@ const Contact = () => {
               </div>
 
               <div className='d-flex flex-column col-12'>
-                <label htmlFor='organization' className='text-light'>
+                <label htmlFor='organization'>
                   Empresa u organizacion (Opcional)
                 </label>
                 <input
@@ -108,7 +104,7 @@ const Contact = () => {
                   placeholder='Organización'
                   id='organization'
                   {...register('organization')}
-                  className='rounded-3 my-2 p-2 border border-0'
+                  className='my-2 p-2 border border-0'
                 />
                 <p className='text-warning text-center'>
                   {errors.organization?.message}
@@ -116,33 +112,14 @@ const Contact = () => {
               </div>
 
               <div className='d-flex flex-column col-12'>
-                <label htmlFor='phone' className='text-light'>
-                  Teléfono (Opcional)
-                </label>
-                <input
-                  type='text'
-                  name='phone'
-                  placeholder='55 1234 5678'
-                  id='phone'
-                  {...register('phone')}
-                  className='rounded-3 my-2 p-2 border border-0'
-                />
-                <p className='text-warning text-center'>
-                  {errors.phone?.message}
-                </p>
-              </div>
-
-              <div className='d-flex flex-column col-12'>
-                <label htmlFor='email' className='text-light'>
-                  Email
-                </label>
+                <label htmlFor='email'>Correo</label>
                 <input
                   type='text'
                   name='email'
                   placeholder='correo@mail.com'
                   id='email'
                   {...register('email')}
-                  className='rounded-3 my-2 p-2 border border-0'
+                  className='my-2 p-2 border border-0'
                 />
                 <p className='text-warning text-center'>
                   {errors.email?.message}
@@ -150,15 +127,28 @@ const Contact = () => {
               </div>
 
               <div className='d-flex flex-column col-12'>
-                <label htmlFor='message' className='text-light'>
-                  Mensaje
-                </label>
+                <label htmlFor='phone'>Teléfono (Opcional)</label>
+                <input
+                  type='text'
+                  name='phone'
+                  placeholder='55 1234 5678'
+                  id='phone'
+                  {...register('phone')}
+                  className='my-2 p-2 border border-0'
+                />
+                <p className='text-warning text-center'>
+                  {errors.phone?.message}
+                </p>
+              </div>
+
+              <div className='d-flex flex-column col-12'>
+                <label htmlFor='message'>Mensaje</label>
                 <textarea
                   name='message'
                   placeholder='Escribe tu mensaje'
                   id='message'
                   {...register('message')}
-                  className='rounded-3 my-2 p-2 border border-0'
+                  className='my-2 p-2 border border-0'
                   rows='3'
                 />
                 <p className='text-warning text-center'>
@@ -166,12 +156,14 @@ const Contact = () => {
                 </p>
               </div>
 
-              <button
-                type='submit'
-                className='btn btn-outline-light btn-lg px-5 py-1 col-12 my-3'
-              >
-                Enviar
-              </button>
+              <div className='text-center'>
+                <button
+                  type='submit'
+                  className='btn btn-primary rounded-0 text-light btn-lg px-5 py-1 col-3 my-3'
+                >
+                  Enviar
+                </button>
+              </div>
             </form>
           </div>
 

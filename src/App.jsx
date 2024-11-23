@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import RoutesIndex from '@/routes';
 import Footer from './components/Footer';
+import Header from './components/Header';
 
 function App() {
   const [footerData, setFooterData] = useState(null);
@@ -41,6 +42,7 @@ function App() {
 
   return (
     <>
+      <Header/>
       <RouterProvider router={router} />
       <Footer data={footerData} services={services.services} />
     </>
