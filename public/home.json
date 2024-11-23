@@ -5,7 +5,7 @@
     "buttonText": "Conoce Nuestros Servicios",
     "buttonLink": "#services",
     "backgroundImage": "/home/banner_background.jpg",
-    "logo": "Logo_White.png"
+    "logo": "logo_basic.png"
   },
   "servicesSection": {
     "title": "Nuestros Servicios",
