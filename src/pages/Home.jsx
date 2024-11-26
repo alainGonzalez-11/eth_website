@@ -2,7 +2,7 @@ import Banner from '@/components/home/Banner.jsx'
 import ServicesSection from '../components/home/ServicesSection'
 import ClientsSection from '../components/home/ClientsSection'
 import Success from '../components/home/Success'
-import Diferentiator from '../components/home/Diferentiator'
+import Contribute from '../components/home/Contribute'
 import Contact from '../components/home/Contact'
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       <ServicesSection/>
       <ClientsSection/>
       <Success/>
-      <Diferentiator/>
+      <Contribute/>
       <Contact/>
     </div>
   )

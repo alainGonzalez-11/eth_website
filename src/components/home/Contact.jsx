@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import emailjs from '@emailjs/browser'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -47,9 +47,25 @@ const Contact = () => {
     setShowModal(true)
   }
 
+  const [content, setContent] = useState(null)
+
+  useEffect(() => {
+    fetch('/contact.json') // Adjust the path as needed
+      .then(response => response.json())
+      .then(data => setContent(data.contact))
+      .catch(error => console.error('Error loading content:', error))
+  }, [])
+
+  if (!content) return <div>Loading...</div>
+
   return (
-    <div className='container-fluid bg-body-secondary align-content-center h-full py-4'>
-      <div className='row mx-0 mt-5 mt-md-0 mt-lg-5 justify-content-center'>
+    <div className='container-fluid bg-body-secondary bg-opacity-25 align-content-center h-full pt-4' >
+      <div className='row justify-content-center' style={{
+        backgroundImage: `url(${content.backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: '0.5',
+      }}>
         <div className='col-12 col-md-6'>
           <h2 className='text-primary text-center fw-bold mb-3'>Contáctanos</h2>
           <div className='contact-container'>
