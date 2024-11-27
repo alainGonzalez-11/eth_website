@@ -9,10 +9,13 @@ const ServicesSection = () => {
 
   useEffect(() => {
     // Fetch services data
-    fetch('/services.json')
-      .then((response) => response.json())
-      .then((data) => setServicesData(data.services))
-      .catch((error) => console.error('Error loading services:', error));
+    fetch('https://cdn.contentful.com/spaces/0w7isqwzcsuy/environments/master/entries?content_type=service&access_token=bGyYPVBVyVHiyNPLSCDOqzM0T2HOV_qtdj11pSFcoo4')
+    .then((response) => response.json())
+    .then((data) => {
+      // Assuming the services data is in `items` under the response structure
+      setServicesData(data.items); // Adjust as necessary based on Contentful response
+    })
+    .catch((error) => console.error('Error loading services:', error));
 
     // Fetch section content from home.json
     fetch('/home.json')
@@ -35,11 +38,11 @@ const ServicesSection = () => {
         <div className="row">
           {servicesData.slice(0, visibleServices).map((service) => (
             <ServiceCard
-              key={service.id}
-              image={service.image}
-              name={service.name}
-              description={service.description}
-              link={service.link}
+              key={service.fields.id}
+              image={service.fields.image}
+              name={service.fields.name}
+              description={service.fields.description}
+              link={service.fields.link}
               details={sectionContent.detailsLabel}
             />
           ))}
