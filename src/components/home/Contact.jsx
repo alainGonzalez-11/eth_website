@@ -4,6 +4,7 @@ import { Modal, Button } from 'react-bootstrap'
 import emailjs from '@emailjs/browser'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import Privacy from './Privacy'
 
 const schema = yup
   .object({
@@ -59,13 +60,14 @@ const Contact = () => {
   if (!content) return <div>Loading...</div>
 
   return (
-    <div className='container-fluid bg-body-secondary bg-opacity-25 align-content-center h-full pt-4' >
-      <div className='row justify-content-center' style={{
-        backgroundImage: `url(${content.backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        opacity: '0.5',
-      }}>
+    <div className='container-fluid bg-body-secondary align-content-center h-full py-5'   style={{
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${content.backgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    height: '100vh', // Asegura que el fondo ocupe toda la ventana
+  }}>
+      <div className='row mx-0 mt-5 mt-md-0 justify-content-center'>
         <div className='col-12 col-md-6'>
           <h2 className='text-primary text-center fw-bold mb-3'>Contáctanos</h2>
           <div className='contact-container'>
@@ -76,7 +78,7 @@ const Contact = () => {
               name='contact'
             >
               <div className='row'>
-                <div className='d-flex flex-column col-6'>
+                <div className='d-flex flex-column text-light col-6'>
                   <label htmlFor='firstName'>Nombre</label>
                   <input
                     type='text'
@@ -94,7 +96,7 @@ const Contact = () => {
                   </p>
                 </div>
 
-                <div className='d-flex flex-column col-6'>
+                <div className='d-flex flex-column text-light col-6'>
                   <label htmlFor='lastName'>Apellido</label>
                   <input
                     type='text'
@@ -110,7 +112,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className='d-flex flex-column col-12'>
+              <div className='d-flex flex-column text-light col-12'>
                 <label htmlFor='organization'>
                   Empresa u organizacion (Opcional)
                 </label>
@@ -127,7 +129,7 @@ const Contact = () => {
                 </p>
               </div>
 
-              <div className='d-flex flex-column col-12'>
+              <div className='d-flex flex-column text-light col-12'>
                 <label htmlFor='email'>Correo</label>
                 <input
                   type='text'
@@ -142,7 +144,7 @@ const Contact = () => {
                 </p>
               </div>
 
-              <div className='d-flex flex-column col-12'>
+              <div className='d-flex flex-column text-light col-12'>
                 <label htmlFor='phone'>Teléfono (Opcional)</label>
                 <input
                   type='text'
@@ -157,7 +159,7 @@ const Contact = () => {
                 </p>
               </div>
 
-              <div className='d-flex flex-column col-12'>
+              <div className='d-flex flex-column text-light col-12'>
                 <label htmlFor='message'>Mensaje</label>
                 <textarea
                   name='message'
@@ -175,12 +177,13 @@ const Contact = () => {
               <div className='text-center'>
                 <button
                   type='submit'
-                  className='btn btn-primary rounded-0 text-light btn-lg px-5 py-1 col-3 my-3'
+                  className='btn btn-primary rounded-0 text-light my-3'
                 >
                   Enviar
                 </button>
               </div>
             </form>
+            <Privacy />
           </div>
 
           <Modal
