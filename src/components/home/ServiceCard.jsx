@@ -1,9 +1,14 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const ServiceCard = ({ image, name, description, link, details }) => {
   const [imgSrc, setImgSrc] = useState(image)
   const placeholderImage = '/path-to-placeholder-image.jpg'
+
+  useEffect(() => {
+    // Fetch services data
+    setImgSrc(image)
+  }, [image]);
 
   return (
     <div className='col-md-4 col-sm-6 mb-4'>

@@ -15,11 +15,21 @@ const CarouselSection = ({ branch }) => {
                 <img
                   src='/LeftArrow.png'
                   alt='Previous'
-                  className='custom-icon'
+                  style={{
+                    width: '30px',
+                    height: '30px',
+                    left: '-50px'}}
                 />
               }
               nextIcon={
-                <img src='/RightArrow.png' alt='Next' className='custom-icon' />
+                <img 
+                  src='/RightArrow.png' 
+                  alt='Next' 
+                style={{
+                  width: '30px',
+                  height: '30px',
+                  right: '100px'}}
+                  />
               }
             >
               {branch.images.map((image, index) => (

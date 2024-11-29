@@ -4,6 +4,7 @@ import ServiceCard from './ServiceCard';
 
 const ServicesSection = () => {
   const [servicesData, setServicesData] = useState([]);
+  const [assets, setAssets] = useState([])
   const [sectionContent, setSectionContent] = useState({ title: '', description: '' });
   const [visibleServices, setVisibleServices] = useState(6);
 
@@ -14,6 +15,8 @@ const ServicesSection = () => {
     .then((data) => {
       // Assuming the services data is in `items` under the response structure
       setServicesData(data.items); // Adjust as necessary based on Contentful response
+      setAssets(data.includes.Asset)
+      
     })
     .catch((error) => console.error('Error loading services:', error));
 
@@ -30,6 +33,21 @@ const ServicesSection = () => {
 
   if (!servicesData.length || !sectionContent.title) return <div>Loading...</div>;
 
+
+  const createSectionCard = (service, assets) => {
+    const targetId = service.fields.image.sys.id
+    const assetUrl = assets.find(asset => asset.sys.id === targetId)?.fields.file.url;
+    return  <ServiceCard
+              key={service.fields.id}
+              image={assetUrl}
+              name={service.fields.name}
+              description={service.fields.description}
+              link={service.fields.link}
+              details={sectionContent.detailsLabel}
+            />
+    
+  }
+
   return (
     <section className="py-5 bg-light">
       <div className="container text-center">
@@ -37,14 +55,7 @@ const ServicesSection = () => {
         <p className="mb-5">{sectionContent.description}</p>
         <div className="row">
           {servicesData.slice(0, visibleServices).map((service) => (
-            <ServiceCard
-              key={service.fields.id}
-              image={service.fields.image}
-              name={service.fields.name}
-              description={service.fields.description}
-              link={service.fields.link}
-              details={sectionContent.detailsLabel}
-            />
+            createSectionCard(service, assets)
           ))}
         </div>
         {visibleServices < servicesData.length && (
