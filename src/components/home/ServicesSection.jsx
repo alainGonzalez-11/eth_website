@@ -10,7 +10,9 @@ const ServicesSection = () => {
 
   useEffect(() => {
     // Fetch services data
-    fetch('https://cdn.contentful.com/spaces/0w7isqwzcsuy/environments/master/entries?content_type=service&access_token=bGyYPVBVyVHiyNPLSCDOqzM0T2HOV_qtdj11pSFcoo4')
+    const token = import.meta.env.VITE_ACCESS_TOKEN
+    const space = import.meta.env.VITE_CMS_SPACE
+    fetch(`https://cdn.contentful.com/spaces/${space}/environments/master/entries?content_type=service&access_token=${token}`)
     .then((response) => response.json())
     .then((data) => {
       // Assuming the services data is in `items` under the response structure
