@@ -51,21 +51,23 @@ const ServicesSection = () => {
   }
 
   return (
-    <section className="py-5 bg-light">
-      <div className="container text-center">
-        <h2 className="fw-bold mb-4 text-primary" id='services'>{sectionContent.title}</h2>
+    <section className="p-5 bg-light container-fluid text-center justify-content-center" id='services'>
+        <h2 className="fw-bold mb-4 mt-5 text-primary" >{sectionContent.title}</h2>
         <p className="mb-5">{sectionContent.description}</p>
-        <div className="row">
+        <div className='container'> 
+          
+        <div className="row d-flex justify-content-center">
           {servicesData.slice(0, visibleServices).map((service) => (
             createSectionCard(service, assets)
           ))}
+        </div>
+
         </div>
         {visibleServices < servicesData.length && (
           <button className="btn btn-primary mt-4 px-6 rounded-0 text-light" onClick={loadMoreServices}>
             {sectionContent.moreLabel}
           </button>
         )}
-      </div>
     </section>
   );
 };

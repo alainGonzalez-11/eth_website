@@ -4,7 +4,10 @@
     "description": "Impulsamos negocios con servicios confiables de TIC y electricidad adaptados a sus necesidades.",
     "buttonText": "Conoce Nuestros Servicios",
     "buttonLink": "#services",
-    "backgroundImage": "/home/banner_background.jpg",
+    "backgroundImages": [
+      "/home/banner_background.jpg",
+      "/home/banner_2.jpg"
+    ],
     "logo": "logo_basic.png"
   },
   "servicesSection": {
