@@ -1,8 +1,8 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, forwardRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import info from '@/content/header.json'
 
-const Header = () => {
+const Header = forwardRef((props, ref) => {
   const navbarCollapseRef = useRef(null)
   const navbarToggleRef = useRef(null)
 
@@ -32,14 +32,14 @@ const Header = () => {
     }
   }, [])
 
-  const [content, setContent] = useState(null);
+  const [content, setContent] = useState(null)
 
   useEffect(() => {
     fetch('/contribute.json') // Adjust the path as needed
-      .then((response) => response.json())
-      .then((data) => setContent(data.contribute))
-      .catch((error) => console.error('Error loading content:', error));
-  }, []);
+      .then(response => response.json())
+      .then(data => setContent(data.contribute))
+      .catch(error => console.error('Error loading content:', error))
+  }, [])
 
   const ImportDrivePhoto = (driveUrl, height) => {
     // Default URL in case no valid file ID is found
@@ -57,13 +57,16 @@ const Header = () => {
   }
 
   return (
-    <nav className='navbar navbar-expand-lg navbar-dark bg-dark py-1 px-5 container-fluid d-flex justify-content-between align-items-center content fixed-top'>
+    <nav
+      className='navbar navbar-expand-lg navbar-dark bg-dark py-1 px-5 container-fluid d-flex justify-content-between align-items-center content fixed-top'
+      ref={ref}
+    >
       <NavLink to='/' className='my-2 col-8 col-sm-7 col-lg-3'>
         <img
           src={ImportDrivePhoto(info.data[0].logo, 600)}
           alt={info.data[0].name}
           className='w-100'
-          style={{'width':'400px'}}
+          style={{ width: '400px' }}
         />
       </NavLink>
 
@@ -104,6 +107,6 @@ const Header = () => {
       </div>
     </nav>
   )
-}
+})
 
 export default Header

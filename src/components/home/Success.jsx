@@ -55,8 +55,12 @@ const Success = () => {
             <div className='d-flex justify-content-end align-items-center mx-0 col-6'>
               <div className='card bg-white col-11'>
                 <div className='d-flex flex-column'>
-                  <div className='ratio ratio-21x9'>
-                    <a href={info.data[currentIndex].page} target='blank'>
+                  <div className='p-3'>
+                    <a
+                      href={info.data[currentIndex].page}
+                      target='blank'
+                      className='p-3'
+                    >
                       <img
                         src={ImportDrivePhoto(
                           info.data[currentIndex].imagemain,
@@ -66,6 +70,8 @@ const Success = () => {
                         alt={info.data[currentIndex].name}
                       />
                     </a>
+                  </div>
+                  <div className='ratio ratio-21x9'>
                     <img
                       src={ImportDrivePhoto(
                         info.data[currentIndex].imagesecond,
@@ -75,16 +81,26 @@ const Success = () => {
                       alt={info.data[currentIndex].name}
                     />
                   </div>
-                  <div className='ratio ratio-21x9'>
-                    <div className='card-body d-flex flex-column pb-0'>
-                      <div className='overflow-auto h-50'>
+
+                  <div className='ratio ratio-16x9'>
+                    <div className='card-body d-flex flex-column'>
+                      <div className='overflow-auto'>
                         <p className='text-justify'>
                           {info.data[currentIndex].description}
                         </p>
                       </div>
                       <div className='d-flex flex-column'>
-                        <h3>Nombre del responsable</h3>
-                        <h5>Rol</h5>
+                        <div className='pt-3'>
+                          <h4>Nombre del proyecto</h4>
+                          <h5>Ubicación</h5>
+                          <a
+                            href=''
+                            className='btn btn-outline-primary rounded-0 mx-auto my-1'
+                            target='blank'
+                          >
+                            Saber más
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -94,12 +110,13 @@ const Success = () => {
             <div className='d-flex justify-content-start align-items-center mx-0 col-6'>
               <div className='card bg-white col-11'>
                 <div className='d-flex flex-column'>
-                  <div className='ratio ratio-21x9'>
+                  <div className='p-3'>
                     <a
                       href={
                         info.data[(currentIndex + 1) % info.data.length].page
                       }
                       target='blank'
+                      className='p-3'
                     >
                       <img
                         src={ImportDrivePhoto(
@@ -113,6 +130,8 @@ const Success = () => {
                         }
                       />
                     </a>
+                  </div>
+                  <div className='ratio ratio-21x9'>
                     <img
                       src={ImportDrivePhoto(
                         info.data[(currentIndex + 1) % info.data.length]
@@ -125,9 +144,10 @@ const Success = () => {
                       }
                     />
                   </div>
-                  <div className='ratio ratio-21x9'>
+
+                  <div className='ratio ratio-16x9'>
                     <div className='card-body d-flex flex-column pb-0'>
-                      <div className='overflow-auto h-50'>
+                      <div className='overflow-auto h-75'>
                         <p className='text-justify'>
                           {
                             info.data[(currentIndex + 1) % info.data.length]
@@ -136,8 +156,17 @@ const Success = () => {
                         </p>
                       </div>
                       <div className='d-flex flex-column'>
-                        <h3>Nombre del responsable</h3>
-                        <h5>Rol</h5>
+                        <div className='pt-3'>
+                          <h4>Nombre del proyecto</h4>
+                          <h5>Ubicación</h5>
+                          <a
+                            href=''
+                            className='btn btn-outline-primary rounded-0 mx-auto my-3'
+                            target='blank'
+                          >
+                            Saber más
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -169,11 +198,20 @@ const Success = () => {
   )
 
   return (
-    <section className='container-xxl bg-body-secondary h-full py-4'>
+    <section className='bg-body-secondary h-full py-5'>
       <h2 className='fw-bold text-center text-primary mb-4'>Casos de Éxito</h2>
       <div className='row mx-0 justify-content-center align-items-center'>
         <div className='text-center bg-body-secondary col-12 col-md-6 col-lg-10 my-5 my-lg-0'>
           {successcarousel}
+        </div>
+        <div className='text-center'>
+          <a
+            href=''
+            className='btn btn-primary rounded-0 my-3'
+            target='blank'
+          >
+            Ver todos los proyectos
+          </a>
         </div>
       </div>
     </section>
