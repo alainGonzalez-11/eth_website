@@ -5,6 +5,10 @@ import Success from '../components/home/Success'
 import Contribute from '../components/home/Contribute'
 import Contact from '../components/home/Contact'
 const Home = () => {
+  const loadContent = (name) => {
+
+  }
+
   return (
     <div>
       <Banner/>

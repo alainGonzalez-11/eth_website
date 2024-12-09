@@ -1,12 +1,13 @@
 import { Routes, Route } from 'react-router-dom'
-import { Home, ServicePage } from '@/pages'
+import { Home, ServicePage, BasicPage } from '@/pages'
 
 
 const App = () => {
   return (
     <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path="/services/:serviceUrl" element={<ServicePage />} /> {/* Dynamic Service Page */}
+      <Route path='/' element={<BasicPage />} />
+      <Route path='/:pageUrl' element={<BasicPage />} />
+      {/* <Route path="/services/:serviceUrl" element={<ServicePage />} /> Dynamic Service Page */}
     </Routes>
   )
 }

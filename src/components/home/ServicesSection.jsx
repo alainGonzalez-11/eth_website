@@ -12,6 +12,8 @@ const ServicesSection = () => {
     // Fetch services data
     const token = import.meta.env.VITE_ACCESS_TOKEN
     const space = import.meta.env.VITE_CMS_SPACE
+
+    
     fetch(`https://cdn.contentful.com/spaces/${space}/environments/master/entries?content_type=service&access_token=${token}`)
     .then((response) => response.json())
     .then((data) => {
