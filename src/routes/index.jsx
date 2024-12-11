@@ -7,7 +7,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={<BasicPage />} />
       <Route path='/:pageUrl' element={<BasicPage />} />
-      {/* <Route path="/services/:serviceUrl" element={<ServicePage />} /> Dynamic Service Page */}
+      <Route path="/services/:serviceUrl" element={<ServicePage />} /> Dynamic Service Page
     </Routes>
   )
 }

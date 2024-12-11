@@ -1,7 +1,8 @@
 import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import Banner from '@/components/home/Banner.jsx'
-
+import ServicesSection from '@/components/home/ServicesSection.jsx'
+import ClientsSection from '@/components/home/ClientsSection.jsx'
 
 const BasicPage = () => {
     const { pageUrl } = useParams() // Get dynamic URL parameter
@@ -31,8 +32,10 @@ const BasicPage = () => {
         switch (sectionData.type) {
           case 'CarouselBanner':
             return <Banner fields={sectionData} assets={assets.Asset} />
-          case 'paragraph':
-            return <p>{section.content[0].text}</p>
+          case 'ServicesCards':
+            return <ServicesSection fields={sectionData} assets={assets.Asset} />
+          case 'Clients':
+            return <ClientsSection fields={sectionData} assets={assets.Asset} />
           case 'image':
             return (
               <img
