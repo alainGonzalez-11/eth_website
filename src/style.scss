@@ -165,6 +165,7 @@ section {
   scroll-margin-top: 40px; /* Adjust to match your navbar height */
 }
 
+.success {
 @media (min-width: 768px) {
   .carousel-inner {
     display: flex;
@@ -198,4 +199,5 @@ section {
   img{
     max-height: 100%;
   }
+}
 }
