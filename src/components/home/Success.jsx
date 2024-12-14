@@ -93,14 +93,17 @@ const Success = () => {
 */
   }
   return (
-    <div className='success'>
+    <div className='success py-5'>
+      <div className='text-center'>
+        <h2 className='fw-bold mb-4 text-primary'>Casos de éxito</h2>
+      </div>
       <div id='carouselExampleControls' className='carousel'>
         <div className='carousel-inner' ref={carouselInner}>
           <div className='carousel-item active'>
             <div className='card'>
               <div className='img-wrapper'>
                 <img
-                  src='https://editorialtelevisa.brightspotcdn.com/5d/22/7b517e1242d78f28df597461df79/cupcakes-de-unicornio-receta-facil-y-rapida.jpg'
+                  src='https://ideaingenieria.es/wp-content/uploads/2023/05/mantenimiento-industrial-1024x683.webp'
                   className='d-block w-100'
                   alt='...'
                 />
@@ -121,7 +124,7 @@ const Success = () => {
             <div className='card'>
               <div className='img-wrapper'>
                 <img
-                  src='https://cdn0.uncomo.com/es/posts/3/9/6/como_hacer_cupcakes_glaseados_6693_orig.jpg'
+                  src='https://www.loyvan.com/wp-content/uploads/2014/04/red-de-datos.jpg'
                   className='d-block w-100'
                   alt='...'
                 />
@@ -142,7 +145,7 @@ const Success = () => {
             <div className='card'>
               <div className='img-wrapper'>
                 <img
-                  src='https://www.lacostena.com.mx/media/thumbnail/uploads/Recipes/postre/32_cupcakes_de_nata.jpg.1920x800_q85_center.jpg'
+                  src='https://universidadeuropea.com/resources/media/images/que-es-ciberseguridad-800x450.width-1200.format-webp.webp'
                   className='d-block w-100'
                   alt='...'
                 />
@@ -163,7 +166,7 @@ const Success = () => {
             <div className='card'>
               <div className='img-wrapper'>
                 <img
-                  src='https://www.lacostena.com.mx/media/thumbnail/uploads/Recipes/postre/32_cupcakes_de_nata.jpg.1920x800_q85_center.jpg'
+                  src='https://grupoindustronic.com/wp-content/uploads/2024/06/Tipos_de_instalaciones_electricas.webp'
                   className='d-block w-100'
                   alt='...'
                 />
