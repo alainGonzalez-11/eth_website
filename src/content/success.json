@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "title": "Casos de Éxito"
+  },
+  "success": [
+      {
+        "projectName": "Nombre del proyecto",
+        "name": "Altair",
+        "page": "https://altair.com/altair-mexico",
+        "logo": "https://drive.google.com/file/d/1dk4dlKDU8MefZmQv54rsCys6C7wu_vpZ/view?usp=drive_link",
+        "image": "https://drive.google.com/file/d/1pcMe8xSuvtE__opyLjq2BDZr7ml0sUln/view?usp=sharing",
+        "description":"Altair, líder mundial en inteligencia computacional, nos proporciona herramientas para analizar y optimizar proyectos, además de recursos para aprender a usar sus softwares de simulación, HPC e IA. La empresa también ofrece soluciones para diversas industrias, como la automotriz, aeroespacial y la manufactura, ayudándoles a innovar, mejorar la eficiencia y reducir el impacto ambiental. Su objetivo es impulsar la innovación y decisiones inteligentes a través de la ciencia computacional, creando un futuro más conectado y sostenible.",
+        "location": "Ubicación"
+      },
+      {
+        "projectName": "Nombre del proyecto",
+        "name": "Altair",
+        "page": "https://altair.com/altair-mexico",
+        "logo": "https://drive.google.com/file/d/1dk4dlKDU8MefZmQv54rsCys6C7wu_vpZ/view?usp=drive_link",
+        "image": "https://drive.google.com/file/d/1pcMe8xSuvtE__opyLjq2BDZr7ml0sUln/view?usp=sharing",
+        "description":"Altair, líder mundial en inteligencia computacional, nos proporciona herramientas para analizar y optimizar proyectos, además de recursos para aprender a usar sus softwares de simulación, HPC e IA. La empresa también ofrece soluciones para diversas industrias, como la automotriz, aeroespacial y la manufactura, ayudándoles a innovar, mejorar la eficiencia y reducir el impacto ambiental. Su objetivo es impulsar la innovación y decisiones inteligentes a través de la ciencia computacional, creando un futuro más conectado y sostenible.",
+        "location": "Ubicación"
+      },
+      {
+        "projectName": "Nombre del proyecto",
+        "name": "Altair",
+        "page": "https://altair.com/altair-mexico",
+        "logo": "https://drive.google.com/file/d/1dk4dlKDU8MefZmQv54rsCys6C7wu_vpZ/view?usp=drive_link",
+        "image": "https://drive.google.com/file/d/1pcMe8xSuvtE__opyLjq2BDZr7ml0sUln/view?usp=sharing",
+        "description":"Altair, líder mundial en inteligencia computacional, nos proporciona herramientas para analizar y optimizar proyectos, además de recursos para aprender a usar sus softwares de simulación, HPC e IA. La empresa también ofrece soluciones para diversas industrias, como la automotriz, aeroespacial y la manufactura, ayudándoles a innovar, mejorar la eficiencia y reducir el impacto ambiental. Su objetivo es impulsar la innovación y decisiones inteligentes a través de la ciencia computacional, creando un futuro más conectado y sostenible.",
+        "location": "Ubicación"
+      }
+    ]
+  }

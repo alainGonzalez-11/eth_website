@@ -1,221 +1,236 @@
 /* eslint-disable no-new */
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Carousel } from 'bootstrap'
-import info from '@/content/Sponsors.json'
+import SuccessCard from './SuccessCard'
 
 const Success = () => {
-  const carouselRef1 = useRef(null)
-  const carouselRef2 = useRef(null)
+  {
+    /*
+  const carouselRef = useRef(null)
+  const [content, setContent] = useState([])
+  const [currentIndex, setCurrentIndex] = useState(0)
+  */
+  }
+  const carouselInner = useRef(null)
+  const [carouselWidth, setCarouselWidth] = useState(0)
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const cardWidth = useRef(0)
 
   useEffect(() => {
-    if (carouselRef1.current) {
-      new Carousel(carouselRef1.current)
-    }
-    if (carouselRef2.current) {
-      new Carousel(carouselRef2.current)
+    fetch('/success.json')
+      .then(response => response.json())
+      .then(data => setContent(data.data || []))
+      .catch(error => console.error('Error al cargar el JSON:', error))
+  }, [])
+
+  useEffect(() => {
+    if (carouselInner.current) {
+      setCarouselWidth(carouselInner.current.scrollWidth)
+      const firstCard = carouselInner.current.querySelector('.carousel-item')
+      if (firstCard) {
+        cardWidth.current = firstCard.offsetWidth
+      }
     }
   }, [])
 
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const handleNextClick = () => {
+    if (
+      scrollPosition < carouselWidth - cardWidth.current * 4 &&
+      carouselInner.current
+    ) {
+      setScrollPosition(
+        prevScrollPosition => prevScrollPosition + cardWidth.current
+      )
+
+      carouselInner.current.scrollTo({
+        left: scrollPosition + cardWidth.current,
+        behavior: 'smooth'
+      })
+    }
+  }
+
+  const handlePrevClick = () => {
+    if (scrollPosition > 0 && carouselInner.current) {
+      setScrollPosition(
+        prevScrollPosition => prevScrollPosition - cardWidth.current
+      )
+
+      carouselInner.current.scrollTo({
+        left: scrollPosition - cardWidth.current,
+        behavior: 'smooth'
+      })
+    }
+  }
+
+  {
+    /*
+  useEffect(() => {
+    if (carouselRef.current && content.length > 0) {
+      new Carousel(carouselRef.current)
+    }
+  }, [content])
 
   const handleNext = () => {
-    setCurrentIndex(prevIndex => (prevIndex + 1) % info.data.length)
+    if (content && content.length > 0) {
+      // Verifica si content existe y no está vacío
+      setCurrentIndex(prevIndex => (prevIndex + 1) % content.length)
+    }
   }
 
   const handlePrev = () => {
-    setCurrentIndex(
-      prevIndex => (prevIndex - 1 + info.data.length) % info.data.length
-    )
+    if (content && content.length > 0) {
+      // Verifica si content existe y no está vacío
+      setCurrentIndex(
+        prevIndex => (prevIndex - 1 + content.length) % content.length
+      )
+    }
   }
 
-  const ImportDrivePhoto = (driveUrl, height) => {
-    // Default URL in case no valid file ID is found
-    const defaultUrl =
-      'https://drive.google.com/file/d/1Q7By_xG9r3a8Zr47j6b1HG7yAm91GIHO/view?usp=drive_link'
-
-    // Try to extract the file ID from the Google Drive URL
-    const match = driveUrl.match(/\/d\/(.*)\//)
-    const fileId = match ? match[1] : defaultUrl.match(/\/d\/(.*)\//)[1]
-
-    // Construct the new URL with the specified height
-    const newUrl = `https://lh3.googleusercontent.com/d/${fileId}=h${height}`
-
-    return newUrl
+  const leftIndex = currentIndex
+  const rightIndex = (currentIndex + 1) % content.length
+*/
   }
-
-  const successcarousel = (
-    <div
-      id='opinioncarousel'
-      className='carousel carousel-dark justify-content-center'
-      ref={carouselRef1}
-    >
-      <div className='carousel-inner'>
+  return (
+    <div id='carouselExampleControls' className='carousel'>
+      <div className='carousel-inner' ref={carouselInner}>
         <div className='carousel-item active'>
-          <div className='row justify-content-center'>
-            <div className='d-flex justify-content-end align-items-center mx-0 col-6'>
-              <div className='card bg-white col-11'>
-                <div className='d-flex flex-column'>
-                  <div className='p-3'>
-                    <a
-                      href={info.data[currentIndex].page}
-                      target='blank'
-                      className='p-3'
-                    >
-                      <img
-                        src={ImportDrivePhoto(
-                          info.data[currentIndex].imagemain,
-                          600
-                        )}
-                        className='object-fit-contain col-5'
-                        alt={info.data[currentIndex].name}
-                      />
-                    </a>
-                  </div>
-                  <div className='ratio ratio-21x9'>
-                    <img
-                      src={ImportDrivePhoto(
-                        info.data[currentIndex].imagesecond,
-                        600
-                      )}
-                      className='object-fit-contain col-12'
-                      alt={info.data[currentIndex].name}
-                    />
-                  </div>
-
-                  <div className='ratio ratio-16x9'>
-                    <div className='card-body d-flex flex-column'>
-                      <div className='overflow-auto'>
-                        <p className='text-justify'>
-                          {info.data[currentIndex].description}
-                        </p>
-                      </div>
-                      <div className='d-flex flex-column'>
-                        <div className='pt-3'>
-                          <h4>Nombre del proyecto</h4>
-                          <h5>Ubicación</h5>
-                          <a
-                            href=''
-                            className='btn btn-outline-primary rounded-0 mx-auto my-1'
-                            target='blank'
-                          >
-                            Saber más
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div className='card'>
+            <div className='img-wrapper'>
+              <img
+                src='https://editorialtelevisa.brightspotcdn.com/5d/22/7b517e1242d78f28df597461df79/cupcakes-de-unicornio-receta-facil-y-rapida.jpg'
+                className='d-block w-100'
+                alt='...'
+              />
             </div>
-            <div className='d-flex justify-content-start align-items-center mx-0 col-6'>
-              <div className='card bg-white col-11'>
-                <div className='d-flex flex-column'>
-                  <div className='p-3'>
-                    <a
-                      href={
-                        info.data[(currentIndex + 1) % info.data.length].page
-                      }
-                      target='blank'
-                      className='p-3'
-                    >
-                      <img
-                        src={ImportDrivePhoto(
-                          info.data[(currentIndex + 1) % info.data.length]
-                            .imagemain,
-                          600
-                        )}
-                        className='object-fit-contain col-5'
-                        alt={
-                          info.data[(currentIndex + 1) % info.data.length].name
-                        }
-                      />
-                    </a>
-                  </div>
-                  <div className='ratio ratio-21x9'>
-                    <img
-                      src={ImportDrivePhoto(
-                        info.data[(currentIndex + 1) % info.data.length]
-                          .imagesecond,
-                        600
-                      )}
-                      className='object-fit-contain col-12'
-                      alt={
-                        info.data[(currentIndex + 1) % info.data.length].name
-                      }
-                    />
-                  </div>
-
-                  <div className='ratio ratio-16x9'>
-                    <div className='card-body d-flex flex-column pb-0'>
-                      <div className='overflow-auto h-75'>
-                        <p className='text-justify'>
-                          {
-                            info.data[(currentIndex + 1) % info.data.length]
-                              .description
-                          }
-                        </p>
-                      </div>
-                      <div className='d-flex flex-column'>
-                        <div className='pt-3'>
-                          <h4>Nombre del proyecto</h4>
-                          <h5>Ubicación</h5>
-                          <a
-                            href=''
-                            className='btn btn-outline-primary rounded-0 mx-auto my-3'
-                            target='blank'
-                          >
-                            Saber más
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className='card-body'>
+              <h5 className='card-title'>Card title 1</h5>
+              <p className='card-text'>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href='/case' className='btn btn-primary'>
+                Ver más
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className='carousel-item'>
+          <div className='card'>
+            <div className='img-wrapper'>
+              <img
+                src='https://cdn0.uncomo.com/es/posts/3/9/6/como_hacer_cupcakes_glaseados_6693_orig.jpg'
+                className='d-block w-100'
+                alt='...'
+              />
+            </div>
+            <div className='card-body'>
+              <h5 className='card-title'>Card title 2</h5>
+              <p className='card-text'>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href='#' className='btn btn-primary'>
+                Ver más
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className='carousel-item'>
+          <div className='card'>
+            <div className='img-wrapper'>
+              <img
+                src='https://www.lacostena.com.mx/media/thumbnail/uploads/Recipes/postre/32_cupcakes_de_nata.jpg.1920x800_q85_center.jpg'
+                className='d-block w-100'
+                alt='...'
+              />
+            </div>
+            <div className='card-body'>
+              <h5 className='card-title'>Card title 3</h5>
+              <p className='card-text'>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href='#' className='btn btn-primary'>
+                Ver más
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className='carousel-item'>
+          <div className='card'>
+            <div className='img-wrapper'>
+              <img
+                src='https://www.lacostena.com.mx/media/thumbnail/uploads/Recipes/postre/32_cupcakes_de_nata.jpg.1920x800_q85_center.jpg'
+                className='d-block w-100'
+                alt='...'
+              />
+            </div>
+            <div className='card-body'>
+              <h5 className='card-title'>Card title 4</h5>
+              <p className='card-text'>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href='#' className='btn btn-primary'>
+                Ver más
+              </a>
             </div>
           </div>
         </div>
       </div>
       <button
-        className='carousel-control-prev justify-content-start'
+        className='carousel-control-prev'
         type='button'
-        data-bs-target='#opinioncarousel'
-        onClick={handlePrev}
+        data-bs-target='#carouselExampleControls'
+        data-bs-slide='prev'
+        onClick={handlePrevClick}
       >
-        <span className='carousel-control-prev-icon' aria-hidden='true' />
+        <span className='carousel-control-prev-icon' aria-hidden='true'></span>
         <span className='visually-hidden'>Previous</span>
       </button>
       <button
-        className='carousel-control-next justify-content-end'
+        className='carousel-control-next'
         type='button'
-        data-bs-target='#opinioncarousel'
-        onClick={handleNext}
+        data-bs-target='#carouselExampleControls'
+        data-bs-slide='next'
+        onClick={handleNextClick}
       >
-        <span className='carousel-control-next-icon' aria-hidden='true' />
+        <span className='carousel-control-next-icon' aria-hidden='true'></span>
         <span className='visually-hidden'>Next</span>
       </button>
     </div>
-  )
-
-  return (
-    <section className='bg-body-secondary h-full py-5'>
-      <h2 className='fw-bold text-center text-primary mb-4'>Casos de Éxito</h2>
-      <div className='row mx-0 justify-content-center align-items-center'>
-        <div className='text-center bg-body-secondary col-12 col-md-6 col-lg-10 my-5 my-lg-0'>
-          {successcarousel}
+    /*<div className="carousel-container">
+      <div className="carousel-track">
+      {content && content.length > 0 ? (
+        <>
+        <div className="card-container left-card">
+          <Card data={content[leftIndex]} />
         </div>
-        <div className='text-center'>
-          <a
-            href=''
-            className='btn btn-primary rounded-0 my-3'
-            target='blank'
-          >
-            Ver todos los proyectos
-          </a>
+        <div className="card-container right-card">
+          <Card data={content[rightIndex]} />
         </div>
+        </>
+        ) : (
+                  <p>Cargando...</p>
+                )}
       </div>
-    </section>
+      <div className="carousel-controls">
+        <button onClick={handlePrev}>Anterior</button>
+        <button onClick={handleNext}>Siguiente</button>
+      </div>
+    </div>*/
   )
 }
+
+const Card = ({ data }) => (
+  <div className='card'>
+    {/* Renderiza la información de la tarjeta */}
+    <h3>{data.title}</h3>
+    <p>{data.description}</p>
+    {/* ... otros elementos de la tarjeta ... */}
+  </div>
+)
 
 export default Success

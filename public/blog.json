@@ -1,0 +1,10 @@
+{
+    "banner": {
+      "phone": "+1 234 567 890",
+      "email": "info@business.com",
+      "address": "123 Main Street, City, Country",
+      "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.687463281372!2d55.26075547595217!3d25.180028832394843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69ce8f931217%3A0x2e71f48b196b1d2c!2sBusiness%20Bay%20-%20Dubai!5e0!3m2!1sen!2sae!4v1732259445450!5m2!1sen!2sae",
+      "image": "https://drive.google.com/file/d/1CDq3fCsKdIIKOJpnC1L-50fYCpwePGGJ/view?usp=drive_link",
+      "backgroundImage": "/home/ups_installation.jpg"
+    }
+  }
