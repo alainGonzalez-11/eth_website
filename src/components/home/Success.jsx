@@ -1,6 +1,5 @@
 /* eslint-disable no-new */
 import { useEffect, useRef, useState } from 'react'
-import info from '@/content/success.json'
 import { Link } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import { Carousel } from 'bootstrap'
@@ -16,7 +15,7 @@ const Success = () => {
   useEffect(() => {
     fetch('/success.json')
       .then(response => response.json())
-      .then(data => setContent(data))
+      .then(data => setContent(data.success))
       .catch(error => console.error('Error loading success cases:', error))
   }, [])
 
@@ -129,7 +128,7 @@ const Success = () => {
       <div className='row justify-content-center'>
         <div id='carouselExampleControls' className='carousel'>
           <div className='carousel-inner' ref={carouselInner}>
-            {info.success.map((item, index) => card(item, index))}
+            {content.map((item, index) => card(item, index))}
           </div>
           <button
             className='carousel-control-prev'
