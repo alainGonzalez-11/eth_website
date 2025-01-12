@@ -1,220 +1,164 @@
 /* eslint-disable no-new */
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Carousel } from 'bootstrap'
-import info from '@/content/Sponsors.json'
+import SuccessCard from './SuccessCard'
 
 const Success = () => {
-  const carouselRef1 = useRef(null)
-  const carouselRef2 = useRef(null)
+  const carouselInner = useRef(null)
+  const [carouselWidth, setCarouselWidth] = useState(0)
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const cardWidth = useRef(0)
+  const [content, setContent] = useState([])
 
   useEffect(() => {
-    if (carouselRef1.current) {
-      new Carousel(carouselRef1.current)
-    }
-    if (carouselRef2.current) {
-      new Carousel(carouselRef2.current)
+    fetch('/success.json')
+      .then(response => response.json())
+      .then(data => setContent(data.success))
+      .catch(error => console.error('Error loading success cases:', error))
+  }, [])
+
+  useEffect(() => {
+    if (carouselInner.current) {
+      setCarouselWidth(carouselInner.current.scrollWidth)
+      const firstCard = carouselInner.current.querySelector('.carousel-item')
+      if (firstCard) {
+        cardWidth.current = firstCard.offsetWidth
+      }
     }
   }, [])
 
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  const handleNext = () => {
-    setCurrentIndex(prevIndex => (prevIndex + 1) % info.data.length)
+  const handleNextClick = () => {
+    if (carouselInner.current) {
+      if (scrollPosition >= carouselWidth - cardWidth.current * 4) {
+        setScrollPosition(0)
+        carouselInner.current.scrollTo({
+          left: 0,
+          behavior: 'smooth'
+        })
+      } else {
+        const newPosition = scrollPosition + cardWidth.current
+        setScrollPosition(newPosition)
+        carouselInner.current.scrollTo({
+          left: newPosition,
+          behavior: 'smooth'
+        })
+      }
+    }
   }
 
-  const handlePrev = () => {
-    setCurrentIndex(
-      prevIndex => (prevIndex - 1 + info.data.length) % info.data.length
-    )
+  const handlePrevClick = () => {
+    if (carouselInner.current) {
+      if (scrollPosition <= 0) {
+        const newPosition = carouselWidth - cardWidth.current * 4
+        setScrollPosition(newPosition)
+        carouselInner.current.scrollTo({
+          left: newPosition,
+          behavior: 'smooth'
+        })
+      } else {
+        const newPosition = scrollPosition - cardWidth.current
+        setScrollPosition(newPosition)
+        carouselInner.current.scrollTo({
+          left: newPosition,
+          behavior: 'smooth'
+        })
+      }
+    }
   }
 
   const ImportDrivePhoto = (driveUrl, height) => {
-    // Default URL in case no valid file ID is found
     const defaultUrl =
       'https://drive.google.com/file/d/1Q7By_xG9r3a8Zr47j6b1HG7yAm91GIHO/view?usp=drive_link'
 
-    // Try to extract the file ID from the Google Drive URL
     const match = driveUrl.match(/\/d\/(.*)\//)
     const fileId = match ? match[1] : defaultUrl.match(/\/d\/(.*)\//)[1]
 
-    // Construct the new URL with the specified height
     const newUrl = `https://lh3.googleusercontent.com/d/${fileId}=h${height}`
 
     return newUrl
   }
 
-  const successcarousel = (
-    <div
-      id='opinioncarousel'
-      className='carousel carousel-dark justify-content-center'
-      ref={carouselRef1}
-    >
-      <div className='carousel-inner'>
-        <div className='carousel-item active'>
-          <div className='row justify-content-center'>
-            <div className='d-flex justify-content-end align-items-center mx-0 col-6'>
-              <div className='card bg-white col-11'>
-                <div className='d-flex flex-column'>
-                  <div className='p-3'>
-                    <a
-                      href={info.data[currentIndex].page}
-                      target='blank'
-                      className='p-3'
-                    >
-                      <img
-                        src={ImportDrivePhoto(
-                          info.data[currentIndex].imagemain,
-                          600
-                        )}
-                        className='object-fit-contain col-5'
-                        alt={info.data[currentIndex].name}
-                      />
-                    </a>
-                  </div>
-                  <div className='ratio ratio-21x9'>
-                    <img
-                      src={ImportDrivePhoto(
-                        info.data[currentIndex].imagesecond,
-                        600
-                      )}
-                      className='object-fit-contain col-12'
-                      alt={info.data[currentIndex].name}
-                    />
-                  </div>
-
-                  <div className='ratio ratio-16x9'>
-                    <div className='card-body d-flex flex-column'>
-                      <div className='overflow-auto'>
-                        <p className='text-justify'>
-                          {info.data[currentIndex].description}
-                        </p>
-                      </div>
-                      <div className='d-flex flex-column'>
-                        <div className='pt-3'>
-                          <h4>Nombre del proyecto</h4>
-                          <h5>Ubicación</h5>
-                          <a
-                            href=''
-                            className='btn btn-outline-primary rounded-0 mx-auto my-1'
-                            target='blank'
-                          >
-                            Saber más
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  const card = (item, index) => (
+    <div key={index} className='carousel-item active'>
+      <div className='card'>
+        <div className='ratio ratio-4x3'>
+          <div className='row justify-content-center mx-auto'>
+            <div className='h-25 w-auto py-2'>
+              <img
+                src={ImportDrivePhoto(item.logo, 250)}
+                className='object-fit-contain'
+                alt={item.name}
+              />
             </div>
-            <div className='d-flex justify-content-start align-items-center mx-0 col-6'>
-              <div className='card bg-white col-11'>
-                <div className='d-flex flex-column'>
-                  <div className='p-3'>
-                    <a
-                      href={
-                        info.data[(currentIndex + 1) % info.data.length].page
-                      }
-                      target='blank'
-                      className='p-3'
-                    >
-                      <img
-                        src={ImportDrivePhoto(
-                          info.data[(currentIndex + 1) % info.data.length]
-                            .imagemain,
-                          600
-                        )}
-                        className='object-fit-contain col-5'
-                        alt={
-                          info.data[(currentIndex + 1) % info.data.length].name
-                        }
-                      />
-                    </a>
-                  </div>
-                  <div className='ratio ratio-21x9'>
-                    <img
-                      src={ImportDrivePhoto(
-                        info.data[(currentIndex + 1) % info.data.length]
-                          .imagesecond,
-                        600
-                      )}
-                      className='object-fit-contain col-12'
-                      alt={
-                        info.data[(currentIndex + 1) % info.data.length].name
-                      }
-                    />
-                  </div>
-
-                  <div className='ratio ratio-16x9'>
-                    <div className='card-body d-flex flex-column pb-0'>
-                      <div className='overflow-auto h-75'>
-                        <p className='text-justify'>
-                          {
-                            info.data[(currentIndex + 1) % info.data.length]
-                              .description
-                          }
-                        </p>
-                      </div>
-                      <div className='d-flex flex-column'>
-                        <div className='pt-3'>
-                          <h4>Nombre del proyecto</h4>
-                          <h5>Ubicación</h5>
-                          <a
-                            href=''
-                            className='btn btn-outline-primary rounded-0 mx-auto my-3'
-                            target='blank'
-                          >
-                            Saber más
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div className='h-75 w-auto'>
+              <img
+                src={ImportDrivePhoto(item.image, 250)}
+                className='object-fit-contain'
+                alt='Imagen principal'
+              />
+            </div>
+          </div>
+        </div>
+        <div className='ratio ratio-21x9'>
+          <div className='card-body d-flex flex-column py-2'>
+            <h5 className='card-title'>{item.projectName}</h5>
+            <h6 className='card-subtitle'>{item.location}</h6>
+            <div className='overflow-auto h-50'>
+              <p className='card-text text-justify'>{item.description}</p>
+            </div>
+            <div className='d-flex my-auto'>
+              <div className='d-flex justify-content-center my-auto'>
+                <a href='/case' className='btn btn-primary'>
+                  {item.button}
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <button
-        className='carousel-control-prev justify-content-start'
-        type='button'
-        data-bs-target='#opinioncarousel'
-        onClick={handlePrev}
-      >
-        <span className='carousel-control-prev-icon' aria-hidden='true' />
-        <span className='visually-hidden'>Previous</span>
-      </button>
-      <button
-        className='carousel-control-next justify-content-end'
-        type='button'
-        data-bs-target='#opinioncarousel'
-        onClick={handleNext}
-      >
-        <span className='carousel-control-next-icon' aria-hidden='true' />
-        <span className='visually-hidden'>Next</span>
-      </button>
     </div>
   )
-
   return (
-    <section className='bg-body-secondary h-full py-5'>
-      <h2 className='fw-bold text-center text-primary mb-4'>Casos de Éxito</h2>
-      <div className='row mx-0 justify-content-center align-items-center'>
-        <div className='text-center bg-body-secondary col-12 col-md-6 col-lg-10 my-5 my-lg-0'>
-          {successcarousel}
-        </div>
-        <div className='text-center'>
-          <a
-            href=''
-            className='btn btn-primary rounded-0 my-3'
-            target='blank'
+    <div className='success py-5'>
+      <div className='text-center'>
+        <h2 className='fw-bold mb-4 text-primary'>Casos de éxito</h2>
+      </div>
+      <div className='row justify-content-center'>
+        <div id='carouselExampleControls' className='carousel'>
+          <div className='carousel-inner' ref={carouselInner}>
+            {content.map((item, index) => card(item, index))}
+          </div>
+          <button
+            className='carousel-control-prev'
+            type='button'
+            data-bs-target='#carouselExampleControls'
+            data-bs-slide='prev'
+            onClick={handlePrevClick}
           >
-            Ver todos los proyectos
-          </a>
+            <span
+              className='carousel-control-prev-icon'
+              aria-hidden='true'
+            ></span>
+            <span className='visually-hidden'>Previous</span>
+          </button>
+          <button
+            className='carousel-control-next'
+            type='button'
+            data-bs-target='#carouselExampleControls'
+            data-bs-slide='next'
+            onClick={handleNextClick}
+          >
+            <span
+              className='carousel-control-next-icon'
+              aria-hidden='true'
+            ></span>
+            <span className='visually-hidden'>Next</span>
+          </button>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

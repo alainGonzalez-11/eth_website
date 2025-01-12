@@ -1,0 +1,74 @@
+{
+  "banner": {
+    "title": "Acerca de ETH Soluciones",
+    "slug": "Somos Especialistas en...",
+    "description": "Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed. Commodo in viverra nunc, ullamcorper ut. Non, amet, aliquet scelerisque nullam sagittis, pulvinar. ",
+    "buttonText": "Desccubre nuestra historia",
+    "buttonLink": "#historia",
+    "backgroundImages": [
+      "/home/banner_2.jpg"
+    ],
+    "logo": "logo_basic.png"
+  },
+  "missionVision": {
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "Brindar soluciones innovadoras y sostenibles que impulsen el desarrollo de las personas, las comunidades y las organizaciones."
+    },
+    "vision": {
+      "title": "Nuestra Visión",
+      "description": "Ser líderes reconocidos por nuestra capacidad para transformar ideas en realidades que generen impacto positivo a largo plazo."
+    }
+  },
+  "valuesSection": {
+    "title": "Nuestros Valores",
+    "image": "/home/banner_2.jpg",
+    "values": [
+      {
+        "icon": "bi-heart",
+        "title": "Integridad",
+        "description": "Actuamos con honestidad y transparencia en cada aspecto de nuestro trabajo."
+      },
+      {
+        "icon": "bi-people",
+        "title": "Colaboración",
+        "description": "Creemos en el poder del trabajo en equipo para alcanzar metas comunes."
+      },
+      {
+        "icon": "bi-lightbulb",
+        "title": "Innovación",
+        "description": "Fomentamos la creatividad y el pensamiento disruptivo para crear soluciones únicas."
+      },
+      {
+        "icon": "bi-globe",
+        "title": "Sostenibilidad",
+        "description": "Nos comprometemos a construir un futuro más responsable y equilibrado."
+      }
+    ]
+  },
+  "historySection": {
+    "title": "Nuestra Historia",
+    "timeline": [
+      {
+        "image": "/services/service_example.jpg",
+        "year": "2000",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel arcu in neque euismod varius. Sed placerat, orci nec bibendum dictum, sapien libero dapibus lacus, at hendrerit lorem justo ut erat."
+      },
+      {
+        "image": "/services/service_example2.jpg",
+        "year": "2005",
+        "description": "Suspendisse potenti. Aenean vel tortor non mauris pretium aliquet. Integer fringilla nisl sed lectus pulvinar, nec interdum nulla ultricies. Curabitur tempus orci in felis gravida, vitae vestibulum elit facilisis."
+      },
+      {
+        "image": "/services/service_example.jpg",
+          "year": "2010",
+        "description": "Nullam auctor turpis ac velit feugiat, vel sollicitudin turpis feugiat. Phasellus ac nisi lacus. Pellentesque ac arcu vitae lorem suscipit dignissim."
+      },
+      {
+        "image": "/services/service_example2.jpg",
+        "year": "2020",
+        "description": "Fusce non libero ac ipsum vehicula aliquet. Sed at ultricies odio. Nulla a bibendum dolor. Nam facilisis elit at purus blandit gravida."
+      }
+    ]
+  }
+}

@@ -7,7 +7,7 @@
     "links": {
       "pages": [
         { "label": "Inicio", "link": "/" },
-        { "label": "Nosotros", "link": "/nosotros" },
+        { "label": "Nosotros", "link": "/acercade" },
         { "label": "Contacto", "link": "/contacto" }
       ],
       "services": [

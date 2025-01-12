@@ -95,10 +95,10 @@ const Header = forwardRef((props, ref) => {
             </NavLink>
           </li>
           <li>
-            <NavLink to='/aboutUs'>Acerca de</NavLink>
+            <NavLink to='/acercade'>Acerca de</NavLink>
           </li>
           <li>
-            <NavLink to='/service'>Servicios</NavLink>
+            <NavLink to='/servicios'>Servicios</NavLink>
           </li>
           <li>
             <NavLink to='/ourBrands'>Nuestras marcas</NavLink>
