@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import Banner from '@/components/home/Banner.jsx'
 import ServicesSection from '@/components/home/ServicesSection.jsx'
 import ClientsSection from '@/components/home/ClientsSection.jsx'
+import Contact from '@/components/home/Contact.jsx'
 
 const BasicPage = () => {
     const { pageUrl } = useParams() // Get dynamic URL parameter
@@ -36,6 +37,8 @@ const BasicPage = () => {
             return <ServicesSection fields={sectionData} assets={assets.Asset} />
           case 'Clients':
             return <ClientsSection fields={sectionData} assets={assets.Asset} />
+            case 'Contact':
+              return <Contact/>
           case 'image':
             return (
               <img
