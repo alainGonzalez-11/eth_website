@@ -11,26 +11,6 @@ const CarouselSection = ({ branch }) => {
             {/* Adding a key to force re-render when branch.id changes */}
             <Carousel
               key={branch.id}
-              prevIcon={
-                <img
-                  src='/LeftArrow.png'
-                  alt='Previous'
-                  style={{
-                    width: '30px',
-                    height: '30px',
-                    left: '-50px'}}
-                />
-              }
-              nextIcon={
-                <img 
-                  src='/RightArrow.png' 
-                  alt='Next' 
-                style={{
-                  width: '30px',
-                  height: '30px',
-                  right: '100px'}}
-                  />
-              }
             >
               {branch.images.map((image, index) => (
                 <Carousel.Item key={index}>
