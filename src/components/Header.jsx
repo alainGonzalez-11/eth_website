@@ -58,7 +58,7 @@ const Header = forwardRef((props, ref) => {
 
   return (
     <nav
-      className='navbar navbar-expand-lg navbar-dark bg-dark py-1 px-5 container-fluid d-flex justify-content-between align-items-center content fixed-top'
+      className='navbar navbar-expand-lg navbar-dark bg-secondary py-1 px-5 container-fluid d-flex justify-content-between align-items-center content fixed-top'
       ref={ref}
     >
       <NavLink to='/' className='my-2 col-8 col-sm-7 col-lg-3'>
