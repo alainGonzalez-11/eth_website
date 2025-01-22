@@ -38,7 +38,6 @@ const extractImage = (img) => {
 
           {/* Visible Content */}
           <div className="text-start">
-            <img src={extractImage(fields.image)} alt="Company Logo" className="mb-4 w-25" />
             <p className="lead display-3">{fields.slug}</p>
             <a href={fields.ctaUrl} className="btn btn-primary btn-lg mt-3 rounded-0">
               {fields.ctaText}
