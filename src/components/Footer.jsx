@@ -4,7 +4,7 @@ const Footer = ({ data, services}) => {
   const { logo, contactButton, links, contactInfo, socialMedia, copyright } = data;
 
   return (
-    <footer className="bg-dark text-white py-4">
+    <footer className="bg-dark-subtle text-white py-4">
       <div className="container">
         {/* Top Row */}
         <div className="row align-items-center">

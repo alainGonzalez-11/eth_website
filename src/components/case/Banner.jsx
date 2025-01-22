@@ -29,12 +29,12 @@ const Banner = () => {
 
   return (
     <div>
-      <div
-        className='d-flex align-items-center text-white vh-100 vw-100'
+      <img
+        src={content.backgroundImage}
+        alt=''
+        className='d-block w-100 h-100'
         style={{
-          backgroundImage: `url(${content.backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          objectFit: 'cover'
         }}
       />
       <div>
@@ -51,7 +51,7 @@ const Banner = () => {
         <p>Fecha de realizacion</p>
         <div className='row mx-0 align-items-center'>
           <div className='col-6'>
-            <p className='text-justify'>
+            <p className='text-justify lead'>
               "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
               quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -67,7 +67,7 @@ const Banner = () => {
               nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
               voluptas nulla pariatur?"
             </p>
-            <p className='text-justify'>
+            <p className='text-justify lead'>
               "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
               quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -77,41 +77,69 @@ const Banner = () => {
             </p>
           </div>
           <div className='col-4 text-center justify-content-center align-items-center mx-auto'>
-            <div id='carouselExample' class='carousel slide'>
-              <div class='carousel-inner'>
-                <div class='carousel-item active'>
-                  <img src='https://ideaingenieria.es/wp-content/uploads/2023/05/mantenimiento-industrial-1024x683.webp' class='d-block w-100' alt='...' />
+            <div>
+              <p className='lead'>
+                Visítanos y síguenos en nuestras redes sociales
+              </p>
+              <a
+                href={content.link1}
+                target='_blank'
+                className='col-3'
+              >
+                <img
+                  className='row mx-auto col-8 col-sm-5 col-md-7 col-xl-2'
+                  src={ImportDrivePhoto(content.social1, 600)}
+                  alt='Imagen principal'
+                />
+              </a>
+            </div>
+            <div id='carouselExample' className='carousel slide'>
+              <div className='carousel-inner'>
+                <div className='carousel-item active'>
+                  <img
+                    src='https://ideaingenieria.es/wp-content/uploads/2023/05/mantenimiento-industrial-1024x683.webp'
+                    className='d-block w-100'
+                    alt='...'
+                  />
                 </div>
-                <div class='carousel-item'>
-                  <img src='https://www.loyvan.com/wp-content/uploads/2014/04/red-de-datos.jpg' class='d-block w-100' alt='...' />
+                <div className='carousel-item'>
+                  <img
+                    src='https://www.loyvan.com/wp-content/uploads/2014/04/red-de-datos.jpg'
+                    className='d-block w-100'
+                    alt='...'
+                  />
                 </div>
-                <div class='carousel-item'>
-                  <img src='https://ideaingenieria.es/wp-content/uploads/2023/05/mantenimiento-industrial-1024x683.webp' class='d-block w-100' alt='...' />
+                <div className='carousel-item'>
+                  <img
+                    src='https://ideaingenieria.es/wp-content/uploads/2023/05/mantenimiento-industrial-1024x683.webp'
+                    className='d-block w-100'
+                    alt='...'
+                  />
                 </div>
               </div>
               <button
-                class='carousel-control-prev'
+                className='carousel-control-prev'
                 type='button'
                 data-bs-target='#carouselExample'
                 data-bs-slide='prev'
               >
                 <span
-                  class='carousel-control-prev-icon'
+                  className='carousel-control-prev-icon'
                   aria-hidden='true'
                 ></span>
-                <span class='visually-hidden'>Previous</span>
+                <span className='visually-hidden'>Previous</span>
               </button>
               <button
-                class='carousel-control-next'
+                className='carousel-control-next'
                 type='button'
                 data-bs-target='#carouselExample'
                 data-bs-slide='next'
               >
                 <span
-                  class='carousel-control-next-icon'
+                  className='carousel-control-next-icon'
                   aria-hidden='true'
                 ></span>
-                <span class='visually-hidden'>Next</span>
+                <span className='visually-hidden'>Next</span>
               </button>
             </div>
           </div>
