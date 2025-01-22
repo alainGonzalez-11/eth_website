@@ -20,6 +20,7 @@ const extractImage = (img) => {
           images={fields.media.map((client) => extractImage(client))}
           name="clients-carousel"
           reference={carouselRef}
+          
         />
       </div>
     </section>
