@@ -47,10 +47,16 @@ const Banner = () => {
           Subtítulo del caso
         </h3>
       </div>
-      <div className='mx-4'>
-        <p>Fecha de realizacion</p>
-        <div className='row mx-0 align-items-center'>
+      <div className='mx-4 mb-5'>
+        <div className='row mx-0'>
+          <div className='col-3'>
+            <p className='lead'>Tabla de contenido</p>
+            <p className=''>Parte introductoria</p>
+            <p className=''>Parte siguiente</p>
+            <p className=''>Imágenes</p>
+          </div>
           <div className='col-6'>
+            <p>Fecha de realizacion</p>
             <p className='text-justify lead'>
               "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -75,25 +81,10 @@ const Banner = () => {
               aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
               eos qui ratione voluptatem sequi nesciunt."
             </p>
-          </div>
-          <div className='col-4 text-center justify-content-center align-items-center mx-auto'>
-            <div>
-              <p className='lead'>
-                Visítanos y síguenos en nuestras redes sociales
-              </p>
-              <a
-                href={content.link1}
-                target='_blank'
-                className='col-3'
-              >
-                <img
-                  className='row mx-auto col-8 col-sm-5 col-md-7 col-xl-2'
-                  src={ImportDrivePhoto(content.social1, 600)}
-                  alt='Imagen principal'
-                />
-              </a>
-            </div>
-            <div id='carouselExample' className='carousel slide'>
+            <div
+              id='carouselExample'
+              className='carousel slide mx-auto col-6 mb-4'
+            >
               <div className='carousel-inner'>
                 <div className='carousel-item active'>
                   <img
@@ -141,6 +132,36 @@ const Banner = () => {
                 ></span>
                 <span className='visually-hidden'>Next</span>
               </button>
+            </div>
+            <div className='row justify-content-center'>
+              <div className='col-auto'>
+                <a className='btn btn-primary'>Caso previo</a>
+              </div>
+              <div className='col-auto'>
+                <a className='btn btn-primary'>Siguiente caso</a>
+              </div>
+            </div>
+          </div>
+
+          <div className='col-3 text-center'>
+            <div>
+              <p className='lead'>
+                Visítanos y síguenos en nuestras redes sociales
+              </p>
+              <a href={content.link1} target='_blank' className='col-3'>
+                <img
+                  className='row mx-auto col-8 col-sm-5 col-md-7 col-xl-2 my-2'
+                  src={ImportDrivePhoto(content.social1, 600)}
+                  alt='Imagen principal'
+                />
+              </a>
+              <a href={content.link2} target='_blank' className='col-3'>
+                <img
+                  className='row mx-auto col-8 col-sm-5 col-md-7 col-xl-2'
+                  src={ImportDrivePhoto(content.social2, 600)}
+                  alt='Imagen principal'
+                />
+              </a>
             </div>
           </div>
         </div>
