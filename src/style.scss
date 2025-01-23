@@ -29,7 +29,7 @@ $theme-colors: map-merge($theme-colors, $custome-theme-colors);
 
 .footer-links a {
   text-decoration: none; /* Removes underline by default */
-  color: white; /* Ensures links are visible on a dark background */
+  color: rgb(32, 32, 32); /* Ensures links are visible on a dark background */
   transition: color 0.3s, text-decoration 0.3s;
 }
 
