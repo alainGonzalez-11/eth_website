@@ -1,24 +1,42 @@
 {
-    "brands": {
-    "allocates": {
-      "image": "https://drive.google.com/file/d/1gRTXj_-hw8a29-QKSME2Zh2mNZrwDyji/view?usp=drive_link"
-    },
-    "brands": [
-        {
-            "name": "allocate1",
-            "page": "https://altair.com/altair-mexico",
-            "logo": "https://drive.google.com/file/d/12-0elAAlFStb9ab2bVZsbNATnbUZHE_y/view?usp=drive_link"
+
+        "allocates": {
+            "description": "something",
+            "image": "https://drive.google.com/file/d/1gRTXj_-hw8a29-QKSME2Zh2mNZrwDyji/view?usp=drive_link"
         },
-        {
-            "name": "allocate2",
-            "page": "https://altair.com/altair-mexico",
-            "logo": ""
-        },
-        {
-            "name": "allocate3",
-            "page": "https://altair.com/altair-mexico",
-            "logo": ""
-        }
-    ]
-}
+        "brands": [
+            {
+                "name": "allocate1",
+                "page": "https://altair.com/altair-mexico",
+                "logo": "https://drive.google.com/file/d/12-0elAAlFStb9ab2bVZsbNATnbUZHE_y/view?usp=drive_link"
+            },
+            {
+                "name": "allocate2",
+                "page": "https://altair.com/altair-mexico",
+                "logo": "https://drive.google.com/file/d/12-0elAAlFStb9ab2bVZsbNATnbUZHE_y/view?usp=drive_link"
+            },
+            {
+                "name": "allocate3",
+                "page": "https://altair.com/altair-mexico",
+                "logo": "https://drive.google.com/file/d/12-0elAAlFStb9ab2bVZsbNATnbUZHE_y/view?usp=drive_link"
+            }
+        ],
+        "partners": [
+            {
+                "name": "allocate1",
+                "page": "https://altair.com/altair-mexico",
+                "logo": "https://drive.google.com/file/d/12-0elAAlFStb9ab2bVZsbNATnbUZHE_y/view?usp=drive_link"
+            },
+            {
+                "name": "allocate2",
+                "page": "https://altair.com/altair-mexico",
+                "logo": "https://drive.google.com/file/d/12-0elAAlFStb9ab2bVZsbNATnbUZHE_y/view?usp=drive_link"
+            },
+            {
+                "name": "allocate3",
+                "page": "https://altair.com/altair-mexico",
+                "logo": "https://drive.google.com/file/d/12-0elAAlFStb9ab2bVZsbNATnbUZHE_y/view?usp=drive_link"
+            }
+        ]
+
   }

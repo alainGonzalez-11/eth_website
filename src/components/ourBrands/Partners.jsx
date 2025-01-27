@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const Allocates = () => {
+const Partners = () => {
   const [content, setContent] = useState([])
 
   useEffect(() => {
@@ -46,15 +46,8 @@ const Allocates = () => {
   return (
     <div>
       <div className='row'>
-        <div className='col-6'>
-          <img
-            className='col-8 col-sm-5 col-md-7 col-xl-12'
-            src={ImportDrivePhoto('content.allocates.image', 600)}
-            alt='Imagen principal'
-          />
-        </div>
         <div className='col-6 text-center p-5'>
-          <h2 className='fw-bold text-primary mb-4'>Marcas que distribuimos</h2>
+          <h2 className='fw-bold text-primary mb-4'>Nuestros Socios Estratégicos</h2>
           <p className='text-justify lead'>
             "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -75,9 +68,16 @@ const Allocates = () => {
             {content.map((item, index) => logos(item, index))}
           </div>
         </div>
+        <div className='col-6'>
+          <img
+            className='col-8 col-sm-5 col-md-7 col-xl-12'
+            src={ImportDrivePhoto('content.allocates.image', 600)}
+            alt='Imagen principal'
+          />
+        </div>
       </div>
     </div>
   )
 }
 
-export default Allocates
+export default Partners
