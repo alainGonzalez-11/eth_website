@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 const Partners = () => {
-  const [content, setContent] = useState([])
+  const [content, setContent] = useState(null)
 
   useEffect(() => {
     fetch('/brands.json')
@@ -65,13 +65,13 @@ const Partners = () => {
             pariatur?"
           </p>
           <div className='row mx-0 justify-content-center align-items-center'>
-            {content.map((item, index) => logos(item, index))}
+            {content.partners.map((item, index) => logos(item, index))}
           </div>
         </div>
         <div className='col-6'>
           <img
             className='col-8 col-sm-5 col-md-7 col-xl-12'
-            src={ImportDrivePhoto('content.allocates.image', 600)}
+            src={ImportDrivePhoto(content.allocates.image, 600)}
             alt='Imagen principal'
           />
         </div>

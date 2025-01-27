@@ -1,15 +1,12 @@
 import { useState, useEffect } from 'react'
 
 const Allocates = () => {
-  const [content, setContent] = useState({
-    allocates: {},
-    brands: [],
-  })
+  const [content, setContent] = useState(null)
 
   useEffect(() => {
     fetch('/brands.json')
       .then(response => response.json())
-      .then(data => setContent(data))
+      .then(data => setContent(data.brands))
       .catch(error => console.error('Error loading content:', error))
   }, [])
 
