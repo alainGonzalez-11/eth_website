@@ -12,15 +12,12 @@ const Banner = () => {
   }, [])
 
   const ImportDrivePhoto = (driveUrl, height) => {
-    // Default URL in case no valid file ID is found
     const defaultUrl =
       'https://drive.google.com/file/d/1Q7By_xG9r3a8Zr47j6b1HG7yAm91GIHO/view?usp=drive_link'
 
-    // Try to extract the file ID from the Google Drive URL
     const match = driveUrl.match(/\/d\/(.*)\//)
     const fileId = match ? match[1] : defaultUrl.match(/\/d\/(.*)\//)[1]
 
-    // Construct the new URL with the specified height
     const newUrl = `https://lh3.googleusercontent.com/d/${fileId}=h${height}`
 
     return newUrl
