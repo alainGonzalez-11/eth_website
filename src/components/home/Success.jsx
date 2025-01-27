@@ -17,7 +17,7 @@ const Success = () => {
       .then(response => response.json())
       .then(data => setContent(data.success))
       .catch(error => console.error('Error loading success cases:', error))
-  }, [content])
+  }, [])
 
   useEffect(() => {
     if (carouselInner.current) {
@@ -27,7 +27,7 @@ const Success = () => {
         cardWidth.current = firstCard.offsetWidth
       }
     }
-  }, [])
+  }, [content])
 
   const handleNextClick = () => {
     if (carouselInner.current) {
