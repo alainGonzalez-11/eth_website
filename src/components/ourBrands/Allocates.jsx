@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react'
 
 const Allocates = () => {
-  const [content, setContent] = useState([])
+  const [content, setContent] = useState({
+    allocates: {},
+    brands: [],
+  })
 
   useEffect(() => {
     fetch('/brands.json')
       .then(response => response.json())
-      .then(data => setContent(data.brands))
+      .then(data => setContent(data))
       .catch(error => console.error('Error loading content:', error))
   }, [])
 
@@ -45,11 +48,11 @@ const Allocates = () => {
 
   return (
     <div>
-      <div className='row'>
+      <div className='row mx-0'>
         <div className='col-6'>
           <img
             className='col-8 col-sm-5 col-md-7 col-xl-12'
-            src={ImportDrivePhoto('content.allocates.image', 600)}
+            src={ImportDrivePhoto(content.allocates.image, 600)}
             alt='Imagen principal'
           />
         </div>
@@ -72,7 +75,7 @@ const Allocates = () => {
             pariatur?"
           </p>
           <div className='row mx-0 justify-content-center align-items-center'>
-            {content.map((item, index) => logos(item, index))}
+            {content.brands.map((item, index) => logos(item, index))}
           </div>
         </div>
       </div>
