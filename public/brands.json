@@ -2,9 +2,9 @@
   "brands": {
     "allocates": {
       "description": "something",
-      "image": "https://drive.google.com/file/d/1gRTXj_-hw8a29-QKSME2Zh2mNZrwDyji/view?usp=drive_link"
+      "image": "https://drive.google.com/file/d/1-ACyMHoVQ9RhebeJTxUMfJBHnJdYWCTx/view?usp=drive_link"
     },
-    "brands": [
+    "brands1": [
       {
         "name": "allocate1",
         "page": "https://altair.com/altair-mexico",
@@ -21,21 +21,25 @@
         "logo": "https://drive.google.com/file/d/12-0elAAlFStb9ab2bVZsbNATnbUZHE_y/view?usp=drive_link"
       }
     ],
-    "partners": [
+    "partners": {
+      "description": "something",
+      "image": "https://drive.google.com/file/d/15Fu8MVYW5m6eKJ0rJwlRnA8a39v_R10F/view?usp=drive_link"
+    },
+    "brands2": [
       {
-        "name": "allocate1",
+        "name": "partner1",
         "page": "https://altair.com/altair-mexico",
-        "logo": "https://drive.google.com/file/d/12-0elAAlFStb9ab2bVZsbNATnbUZHE_y/view?usp=drive_link"
+        "logo": "https://drive.google.com/file/d/1Cxu_DaVZ0S-S33FCaYLwjTT-93xshvtt/view?usp=drive_link"
       },
       {
-        "name": "allocate2",
+        "name": "partner2",
         "page": "https://altair.com/altair-mexico",
-        "logo": "https://drive.google.com/file/d/12-0elAAlFStb9ab2bVZsbNATnbUZHE_y/view?usp=drive_link"
+        "logo": "https://drive.google.com/file/d/1Cxu_DaVZ0S-S33FCaYLwjTT-93xshvtt/view?usp=drive_link"
       },
       {
-        "name": "allocate3",
+        "name": "partner3",
         "page": "https://altair.com/altair-mexico",
-        "logo": "https://drive.google.com/file/d/12-0elAAlFStb9ab2bVZsbNATnbUZHE_y/view?usp=drive_link"
+        "logo": "https://drive.google.com/file/d/1Cxu_DaVZ0S-S33FCaYLwjTT-93xshvtt/view?usp=drive_link"
       }
     ]
   }

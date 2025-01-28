@@ -45,8 +45,8 @@ const Partners = () => {
 
   return (
     <div>
-      <div className='row'>
-        <div className='col-6 text-center p-5'>
+      <div className='row mx-0'>
+        <div className='col-6 text-center pt-5 px-5'>
           <h2 className='fw-bold text-primary mb-4'>Nuestros Socios Estratégicos</h2>
           <p className='text-justify lead'>
             "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -65,13 +65,13 @@ const Partners = () => {
             pariatur?"
           </p>
           <div className='row mx-0 justify-content-center align-items-center'>
-            {content.partners.map((item, index) => logos(item, index))}
+            {content.brands2.map((item, index) => logos(item, index))}
           </div>
         </div>
-        <div className='col-6'>
+        <div className='d-flex align-items-center col-6'>
           <img
             className='col-8 col-sm-5 col-md-7 col-xl-12'
-            src={ImportDrivePhoto(content.allocates.image, 600)}
+            src={ImportDrivePhoto(content.partners.image, 600)}
             alt='Imagen principal'
           />
         </div>
