@@ -31,9 +31,6 @@ function App() {
       }
     };
     window.addEventListener('resize', handleResize); // Changes on screen size
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, []);
 
   if (!footerData) return <div>Loading...</div>;
