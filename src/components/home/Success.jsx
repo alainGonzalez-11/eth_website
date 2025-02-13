@@ -11,13 +11,19 @@ const Success = () => {
   const [scrollPosition, setScrollPosition] = useState(0)
   const cardWidth = useRef(0)
   const [content, setContent] = useState([])
+  const [pageWidth, setPageWidth] = useState(0)
+  const [cardPosition, setCardPosition] = useState(0)
 
   useEffect(() => {
     fetch('/success.json')
       .then(response => response.json())
       .then(data => setContent(data.success))
       .catch(error => console.error('Error loading success cases:', error))
-  }, [])
+      const handleResize = () => {
+        setPageWidth(window.innerWidth)
+      };
+      window.addEventListener('resize', handleResize);
+    }, [])
 
   useEffect(() => {
     if (carouselInner.current) {
@@ -26,17 +32,23 @@ const Success = () => {
       if (firstCard) {
         cardWidth.current = firstCard.offsetWidth
       }
+      setScrollPosition(cardPosition * cardWidth.current)
+      carouselInner.current.scrollTo({
+        left: cardPosition * cardWidth.current,
+        behavior: 'smooth'
+      })
     }
-  }, [content])
-
+  }, [content, pageWidth])
+  
   const handleNextClick = () => {
     if (carouselInner.current) {
-      if (scrollPosition >= carouselWidth - cardWidth.current * 4) {
+      if ( (carouselWidth-scrollPosition) <= pageWidth ) {
         setScrollPosition(0)
         carouselInner.current.scrollTo({
           left: 0,
           behavior: 'smooth'
         })
+        setCardPosition(0)
       } else {
         const newPosition = scrollPosition + cardWidth.current
         setScrollPosition(newPosition)
@@ -44,7 +56,9 @@ const Success = () => {
           left: newPosition,
           behavior: 'smooth'
         })
+        setCardPosition(cardPosition + 1)
       }
+      console.log(cardWidth)
     }
   }
 
@@ -81,7 +95,7 @@ const Success = () => {
   }
 
   const card = (item, index) => (
-    <div key={index} className='carousel-item active'>
+    <div key={index} className='carousel-item d-block active'>
       <div className='card'>
         <div className='ratio ratio-4x3'>
           <div className='row justify-content-center mx-auto'>
@@ -110,7 +124,10 @@ const Success = () => {
             </div>
             <div className='d-flex my-auto'>
               <div className='d-flex justify-content-center my-auto'>
-                <a href='/case' className='btn btn-primary'>
+                <a
+                  href='/case'
+                  className='btn btn-primary text-light rounded-0'
+                >
                   {item.button}
                 </a>
               </div>
@@ -121,41 +138,41 @@ const Success = () => {
     </div>
   )
   return (
-    <div className='success py-5'>
-      <div className='text-center'>
+    <div className='py-5 success'>
+      <div className='cotainer-fluid text-center'>
         <h2 className='fw-bold mb-4 text-primary'>Casos de éxito</h2>
-      </div>
-      <div className='row justify-content-center'>
-        <div id='carouselExampleControls' className='carousel'>
-          <div className='carousel-inner' ref={carouselInner}>
-            {content.map((item, index) => card(item, index))}
+        <div className='row justify-content-center'>
+          <div id='carouselExampleControls' className='carousel'>
+            <div className='carousel-inner d-flex p-2' ref={carouselInner}>
+              {content.map((item, index) => card(item, index))}
+            </div>
+            <button
+              className='carousel-control-prev bg-dark'
+              type='button'
+              data-bs-target='#carouselExampleControls'
+              data-bs-slide='prev'
+              onClick={handlePrevClick}
+            >
+              <span
+                className='carousel-control-prev-icon'
+                aria-hidden='true'
+              ></span>
+              <span className='visually-hidden'>Previous</span>
+            </button>
+            <button
+              className='carousel-control-next bg-dark'
+              type='button'
+              data-bs-target='#carouselExampleControls'
+              data-bs-slide='next'
+              onClick={handleNextClick}
+            >
+              <span
+                className='carousel-control-next-icon'
+                aria-hidden='true'
+              ></span>
+              <span className='visually-hidden'>Next</span>
+            </button>
           </div>
-          <button
-            className='carousel-control-prev'
-            type='button'
-            data-bs-target='#carouselExampleControls'
-            data-bs-slide='prev'
-            onClick={handlePrevClick}
-          >
-            <span
-              className='carousel-control-prev-icon'
-              aria-hidden='true'
-            ></span>
-            <span className='visually-hidden'>Previous</span>
-          </button>
-          <button
-            className='carousel-control-next'
-            type='button'
-            data-bs-target='#carouselExampleControls'
-            data-bs-slide='next'
-            onClick={handleNextClick}
-          >
-            <span
-              className='carousel-control-next-icon'
-              aria-hidden='true'
-            ></span>
-            <span className='visually-hidden'>Next</span>
-          </button>
         </div>
       </div>
     </div>
