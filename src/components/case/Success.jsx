@@ -26,14 +26,6 @@ const Success = () => {
       if (firstCard) {
         cardWidth.current = firstCard.offsetWidth
       }
-      window.addEventListener('resize', () => {
-        setCarouselWidth(carouselInner.current.scrollWidth)
-        const firstCard = carouselInner.current.querySelector('.carousel-item')
-        if (firstCard) {
-          cardWidth.current = firstCard.offsetWidth
-        }
-      })
-      console.log(cardWidth.current.scrollWidth)
     }
   }, [content])
 
