@@ -68,7 +68,7 @@ const Contact = () => {
     height: '100vh', // Asegura que el fondo ocupe toda la ventana
   }}>
       <div className='row mx-0 mt-5 mt-md-0 justify-content-center'>
-        <div className='col-12 col-md-6'>
+        <div className='col-12 col-md-8 col-lg-6'>
           <h2 className='text-primary text-center fw-bold mb-3'>Contáctanos</h2>
           <div className='contact-container'>
             <form
