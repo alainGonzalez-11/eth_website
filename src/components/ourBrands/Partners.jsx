@@ -43,7 +43,7 @@ const Partners = () => {
 
   return (
     <div>
-      <div className='p-5'>
+      <div className='pt-0 p-5'>
         <div className='d-md-flex text-center'>
           <div className='pe-md-5 col-md-6'>
             <h2 className='fw-bold text-primary mb-4 col-12'>
