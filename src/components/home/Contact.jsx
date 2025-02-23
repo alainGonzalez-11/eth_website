@@ -84,7 +84,7 @@ const Contact = () => {
       <div className='row mx-0 mt-5 mt-md-0 justify-content-center'>
         <div className='col-12 col-md-8 col-lg-6'>
           <h2 className='text-primary text-center fw-bold mb-3'>Contáctanos</h2>
-          <div className='contact-container text-dark'>
+          <div className='contact-container text-light'>
             <form
               onSubmit={handleSubmit(whenSubmit)}
               ref={form}

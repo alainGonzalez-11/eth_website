@@ -21,7 +21,7 @@ export default function AutoplayCarousel({ images, name }) {
       console.log(totalWidth);
       setDuration(totalWidth / 325); // Adjust speed: Higher divisor = slower
     }
-  }, [images]);
+  }, [images, reference.current]);
 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
