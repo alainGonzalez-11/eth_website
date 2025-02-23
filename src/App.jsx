@@ -11,43 +11,58 @@ function App () {
   const headerRef = useRef(null);
 
   useEffect(() => {
+    // Fetch footer and services data
     fetch('/footer.json')
-      .then(res => res.json())
-      .then(setFooterData)
+      .then((res) => res.json())
+      .then(setFooterData);
 
     fetch('/services.json')
-      .then(res => res.json())
-      .then(setServices)
+      .then((res) => res.json())
+      .then(setServices);
 
-      const preventContextMenu = (e) => e.preventDefault();
+    // Prevent right-click context menu on images
+    const preventContextMenu = (e) => e.preventDefault();
 
-      // Function to attach the event to all images
-      const attachContextMenuListener = () => {
-        const images = document.querySelectorAll('img');
-        images.forEach((img) => {
-          if (!img.dataset.contextMenuDisabled) {
-            img.addEventListener('contextmenu', preventContextMenu);
-            img.dataset.contextMenuDisabled = true; // Mark the image as processed
-          }
-        });
-      };
-    
-      // Attach to existing images
-      attachContextMenuListener();
-    
-      // Use MutationObserver to watch for new images
-      const observer = new MutationObserver(() => attachContextMenuListener());
-      observer.observe(document.body, { childList: true, subtree: true });
-    
-      return () => {
-        // Cleanup: remove event listeners and observer
-        const images = document.querySelectorAll('img');
-        images.forEach((img) =>
-          img.removeEventListener('contextmenu', preventContextMenu)
-        );
-        observer.disconnect();
-      };
-  }, [])
+    const attachContextMenuListener = () => {
+      const images = document.querySelectorAll('img');
+      images.forEach((img) => {
+        if (!img.dataset.contextMenuDisabled) {
+          img.addEventListener('contextmenu', preventContextMenu);
+          img.dataset.contextMenuDisabled = 'true'; // Mark as processed
+        }
+      });
+    };
+
+    attachContextMenuListener(); // Attach to existing images
+
+    // Observe DOM changes to prevent context menu on new images
+    const observer = new MutationObserver(() => attachContextMenuListener());
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      // Cleanup: remove event listeners and observer
+      document.querySelectorAll('img').forEach((img) =>
+        img.removeEventListener('contextmenu', preventContextMenu)
+      );
+      observer.disconnect();
+    };
+  }, []);
+
+  useLayoutEffect(() => {
+    if (headerRef.current) {
+      setHeaderHeight(headerRef.current.offsetHeight);
+    }
+
+    const handleResize = () => {
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.offsetHeight);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []); // Runs when headerRef.current changes
+
 
 
   if (!footerData) return <div>Loading...</div>
