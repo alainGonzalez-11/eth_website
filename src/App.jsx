@@ -1,14 +1,14 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import { useEffect, useState, useRef } from 'react'
-import RoutesIndex from './routes'
-import Footer from './components/Footer'
-import Header from './components/Header'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { useEffect, useState, useRef, useLayoutEffect } from 'react';
+import RoutesIndex from './routes';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 function App () {
   const [footerData, setFooterData] = useState(null)
   const [services, setServices] = useState(null)
   const [headerHeight, setHeaderHeight] = useState(0)
-  const headerRef = useRef(null)
+  const headerRef = useRef(null);
 
   useEffect(() => {
     fetch('/footer.json')
@@ -58,9 +58,9 @@ function App () {
         path: '/*',
         element: (
           <>
-            <Header ref={headerRef} /> {/* Header now inside Router context */}
+            <Header ref={headerRef} />
             <div style={{ marginTop: headerHeight }}>
-              <RoutesIndex />
+                <RoutesIndex />
             </div>
           </>
         )

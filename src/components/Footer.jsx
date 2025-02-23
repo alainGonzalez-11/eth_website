@@ -4,7 +4,7 @@ const Footer = ({ data, services}) => {
   const { logo, contactButton, links, contactInfo, socialMedia, copyright } = data;
 
   return (
-    <footer className="bg-dark-subtle text-white py-4">
+    <footer className="bg-dark-subtle text-dark py-4">
       <div className="container">
         {/* Top Row */}
         <div className="row align-items-center">
@@ -12,7 +12,7 @@ const Footer = ({ data, services}) => {
             <img src={logo} alt="Logo" className="img-fluid me-3" style={{ maxWidth: "300px" }} />
           </div>
           <div className="col-md-6 text-md-end">
-            <a href={contactButton.link} className="btn btn-primary">
+            <a href={contactButton.link} className="btn btn-primary my-3 border border-rounded-0">
               {contactButton.label}
             </a>
           </div>
@@ -46,7 +46,7 @@ const Footer = ({ data, services}) => {
               <strong>Teléfono:</strong> {contactInfo.phone}
             </p>
             <p className="mb-1">
-              <strong>Email:</strong> <a href={`mailto:${contactInfo.email}`} className="text-white">{contactInfo.email}</a>
+              <strong>Email:</strong> <a href={`mailto:${contactInfo.email}`} className="text-dark">{contactInfo.email}</a>
             </p>
             <p className="mb-3">
               <strong>Dirección:</strong> {contactInfo.address}
@@ -58,7 +58,7 @@ const Footer = ({ data, services}) => {
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white me-3"
+                  className="text-dark me-3"
                 >
                   <i className={`bi ${social.icon}`} style={{ fontSize: "1.5rem" }}></i>
                 </a>
@@ -77,7 +77,7 @@ const Footer = ({ data, services}) => {
 
         {/* Bottom Row */}
         <div className="row mt-4">
-          <div className="col text-center">
+          <div className="col text-dark">
             <p className="mb-0">{copyright}</p>
           </div>
         </div>

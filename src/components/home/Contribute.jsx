@@ -1,4 +1,5 @@
 import  { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 
 const Contribute = () => {
   const [content, setContent] = useState(null);
@@ -34,10 +35,10 @@ const Contribute = () => {
           <h2 className='fw-bold text-primary justify-content-center mb-3'>
             {content.title}
           </h2>
-          <div className='row justify-content-center justify-content-md-end position-absolute top-0 end-0 mx-0 col-2'>
+          <div className='row justify-content-center justify-content-md-end position-absolute top-0 end-0 mx-0 col-3 col-sm-3 col-lg-2'>
             <img
               src={ImportDrivePhoto(content.image, 500)}
-              className='object-fit-contain col-7'
+              className='object-fit- px-0 ms-5 col-12 col-md-10 col-lg-8'
               alt={content.alternative}
             />
           </div>
@@ -47,14 +48,14 @@ const Contribute = () => {
           <p className='text-justify mb-5'>
             {content.description}
           </p>
-          <a
+        </div>
+        <Link
             href=''
-            className='btn btn-outline-primary rounded-0 col-2'
+            className='btn btn-outline-primary rounded-0'
             target='blank'
           >
             {content.buttonText}
-          </a>
-        </div>
+          </Link>
       </div>
     </section>
   )

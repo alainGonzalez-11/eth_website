@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Banner = () => {
   const [content, setContent] = useState(null)
@@ -11,15 +12,12 @@ const Banner = () => {
   }, [])
 
   const ImportDrivePhoto = (driveUrl, height) => {
-    // Default URL in case no valid file ID is found
     const defaultUrl =
       'https://drive.google.com/file/d/1Q7By_xG9r3a8Zr47j6b1HG7yAm91GIHO/view?usp=drive_link'
 
-    // Try to extract the file ID from the Google Drive URL
     const match = driveUrl.match(/\/d\/(.*)\//)
     const fileId = match ? match[1] : defaultUrl.match(/\/d\/(.*)\//)[1]
 
-    // Construct the new URL with the specified height
     const newUrl = `https://lh3.googleusercontent.com/d/${fileId}=h${height}`
 
     return newUrl
@@ -29,28 +27,39 @@ const Banner = () => {
 
   return (
     <div>
-      <img
-        src={content.backgroundImage}
-        alt=''
-        className='d-block w-100 h-100'
+      <div
+        className='position-relative'
         style={{
-          objectFit: 'cover'
+          backgroundImage: `url(${content.backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          height: '400px'
         }}
-      />
-      <div>
-        <h1 className='display-4 text-center text-primary fw-bold my-4'>
-          Título del caso
-        </h1>
+      ></div>
+      <div className='text-center text-primary mt-5 mb-4'>
+        <h1 className='fw-bold '>Título del caso</h1>
+        <h3 className='fw-bold fst-italic mt-3'>Subtítulo del caso</h3>
       </div>
-      <div>
-        <h3 className='display-6 text-center text-primary fw-bold my-4'>
-          Subtítulo del caso
-        </h3>
-      </div>
-      <div className='mx-4'>
-        <p>Fecha de realizacion</p>
-        <div className='row mx-0 align-items-center'>
+      <div className='mx-4 mb-5'>
+        <div className='row mx-0'>
+          <div className='col-3'>
+            <p className='lead'>Tabla de contenido</p>
+            <p className=''>Parte introductoria</p>
+            <p className=''>Parte siguiente</p>
+            <p className=''>Imágenes</p>
+          </div>
+
           <div className='col-6'>
+            <div className='d-flex text-uppercase text-primary fw-semibold'>
+            <NavLink to='/blog'>
+              <button className='bg-primary text-uppercase text-light border border-1 border-dark-subtle px-1 me-1'>Servicio</button>
+            </NavLink>
+            <NavLink to='/blog'>
+              <button className='bg-primary text-uppercase text-light border border-1 border-dark-subtle px-1 ms-1'>Rama</button>
+            </NavLink>
+            </div>
+            <p>Fecha de realizacion</p>
+            <p>Ubicación</p>
             <p className='text-justify lead'>
               "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -75,25 +84,10 @@ const Banner = () => {
               aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
               eos qui ratione voluptatem sequi nesciunt."
             </p>
-          </div>
-          <div className='col-4 text-center justify-content-center align-items-center mx-auto'>
-            <div>
-              <p className='lead'>
-                Visítanos y síguenos en nuestras redes sociales
-              </p>
-              <a
-                href={content.link1}
-                target='_blank'
-                className='col-3'
-              >
-                <img
-                  className='row mx-auto col-8 col-sm-5 col-md-7 col-xl-2'
-                  src={ImportDrivePhoto(content.social1, 600)}
-                  alt='Imagen principal'
-                />
-              </a>
-            </div>
-            <div id='carouselExample' className='carousel slide'>
+            <div
+              id='carouselExample'
+              className='carousel slide mx-auto col-6 mb-4'
+            >
               <div className='carousel-inner'>
                 <div className='carousel-item active'>
                   <img
@@ -141,6 +135,42 @@ const Banner = () => {
                 ></span>
                 <span className='visually-hidden'>Next</span>
               </button>
+            </div>
+            <div className='row justify-content-center'>
+              <div className='col-auto'>
+                <a className='btn btn-primary'>Caso previo</a>
+              </div>
+              <div className='col-auto'>
+                <a className='btn btn-primary'>Siguiente caso</a>
+              </div>
+            </div>
+          </div>
+
+          <div className='col-3 text-center'>
+            <div>
+              <p className='lead'>
+                Visítanos y síguenos en nuestras redes sociales:
+              </p>
+
+              <div className='row justify-content-center my-1 col-12'>
+                <a href={content.link1} target='_blank' className='px-0 col-2'>
+                  <img
+                    className='col-8 col-sm-5 col-md-7 col-xl-12'
+                    src={ImportDrivePhoto(content.social1, 600)}
+                    alt='Imagen principal'
+                  />
+                </a>
+              </div>
+
+              <div className='row justify-content-center my-1 col-12'>
+                <a href={content.link2} target='_blank' className='px-0 col-2'>
+                  <img
+                    className='col-8 col-sm-5 col-md-7 col-xl-12'
+                    src={ImportDrivePhoto(content.social2, 600)}
+                    alt='Imagen principal'
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>

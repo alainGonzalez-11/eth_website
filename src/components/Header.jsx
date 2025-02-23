@@ -66,7 +66,6 @@ const Header = forwardRef((props, ref) => {
           src={ImportDrivePhoto(info.data[0].logo, 600)}
           alt={info.data[0].name}
           className='w-100'
-          style={{ width: '400px' }}
         />
       </Link>
 
@@ -84,26 +83,26 @@ const Header = forwardRef((props, ref) => {
       </button>
 
       <div
-        className='collapse navbar-collapse justify-content-end align-items-center w-auto'
+        className='collapse navbar-collapse justify-content-end  w-auto'
         id='main-nav'
         ref={navbarCollapseRef}
       >
-        <ul className='list-inline d-md-flex m-0'>
-          <li>
+        <ul className='list-inline d-block d-md-flex m-0'>
+          <li className='m-4'>
             <NavLink to='/' end>
               Inicio
             </NavLink>
           </li>
-          <li>
+          <li className='m-4'>
             <NavLink to='/acercade'>Acerca de</NavLink>
           </li>
-          <li>
+          <li className='m-4'>
             <NavLink to='/servicios'>Servicios</NavLink>
           </li>
-          <li>
+          <li className='m-4'>
             <NavLink to='/ourBrands'>Nuestras marcas</NavLink>
           </li>
-          <li className='mx-auto'>
+          <li className='m-4'>
             <NavLink to='/contacto' end>
               Contacto
               <i className='bi bi-headset ps-2' />
