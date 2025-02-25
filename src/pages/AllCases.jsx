@@ -25,68 +25,82 @@ const AllCases = () => {
 
   if (!content) return <div>Loading...</div>
 
+  const card = (item, index) => (
+    <div key={index} className='d-flex mb-5'>
+      <div className='col-3'>
+        <NavLink to='/case'>
+          <img
+            className='col-12'
+            src={ImportDrivePhoto(item.image, 600)}
+            alt='Imagen principal'
+          />
+        </NavLink>
+      </div>
+      <div className='row mx-0 col-8'>
+        <p className='text-uppercase fw-semibold mb-0'>Título</p>
+        <p className='small'>11 de febrero, 2025</p>
+        <div className='col-12'>
+          <p className='text-justify'>
+            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo."
+          </p>
+          <NavLink to='/case' className='btn btn-primary rounded-0 text-light'>
+            Leer más
+          </NavLink>
+        </div>
+      </div>
+    </div>
+  )
+
   return (
     <div>
-      <div className='text-center text-primary mt-5 mb-4'>
-        <h1 className='fw-bold '>Nuestros casos</h1>
-      </div>
       <div className='mx-4 mb-5'>
+        <div className='text-primary mb-4 text-center'>
+          <h1 className='fw-bold'>Nuestros casos</h1>
+        </div>
         <div className='row mx-0'>
           <div className='col-3'>
-            <p className='lead'>Categorías</p>
-            <ul>
-              <li className=''>Servicios de Mantenimiento</li>
-              <li className=''>Servicio Adicional</li>
-              <li className=''>Soluciones en la Nube</li>
-              <li className=''>Redes de Datos</li>
-              <li className=''>Ciberseguridad</li>
-              <li className=''>Instalaciones Eléctricas</li>
-              <li className=''>Consultoría en TIC</li>
-            </ul>
+            <p className='fw-bold mb-0'>Categorías</p>
+            <p className='fw-semibold ms-3 mb-0'>
+              Servicios de Mantenimiento
+              <p className='fw-normal ms-3 mb-0'>Mantenimiento Preventivo</p>
+              <p className='fw-normal ms-3 mb-0'>Mantenimiento Correctivo</p>
+            </p>
+            <p className='fw-semibold ms-3 mb-0'>
+              Servicio Adicional
+              <p className='fw-normal ms-3 mb-0'>Rama 1</p>
+              <p className='fw-normal ms-3 mb-0'>Rama 2</p>
+            </p>
+            <p className='fw-semibold ms-3 mb-0'>
+              Soluciones en la Nube
+              <p className='fw-normal ms-3 mb-0'>Rama 1</p>
+              <p className='fw-normal ms-3 mb-0'>Rama 2</p>
+            </p>
+            <p className='fw-semibold ms-3 mb-0'>
+              Redes de Datos
+              <p className='fw-normal ms-3 mb-0'>Rama 1</p>
+              <p className='fw-normal ms-3 mb-0'>Rama 2</p>
+            </p>
+            <p className='fw-semibold ms-3 mb-0'>
+              Ciberseguridad
+              <p className='fw-normal ms-3 mb-0'>Rama 1</p>
+              <p className='fw-normal ms-3 mb-0'>Rama 2</p>
+            </p>
+            <p className='fw-semibold ms-3 mb-0'>
+              Instalaciones Eléctricas
+              <p className='fw-normal ms-3 mb-0'>Rama 1</p>
+              <p className='fw-normal ms-3 mb-0'>Rama 2</p>
+            </p>
+            <p className='fw-semibold ms-3 mb-0'>
+              Consultoría en TIC
+              <p className='fw-normal ms-3 mb-0'>Rama 1</p>
+              <p className='fw-normal ms-3 mb-0'>Rama 2</p>
+            </p>
           </div>
-          <div className='col-6'>
-            <div className='d-flex text-uppercase fw-semibold'>
-              <NavLink to='/case'>
-                <img
-                  className='col-8 col-sm-5 col-md-7 col-xl-12'
-                  src={ImportDrivePhoto(content[0].image, 600)}
-                  alt='Imagen principal'
-                />
-              </NavLink>
-              <p>Fecha de realizacion</p>
-              <p>Ubicación</p>
-              <div className='col-12'>
-                <p className='text-justify lead'>
-                  "Sed ut perspiciatis unde omnis iste natus error sit
-                  voluptatem accusantium doloremque laudantium, totam rem
-                  aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                  architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                  voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-                  sed quia consequuntur magni dolores eos qui ratione voluptatem
-                  sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-                  quia dolor sit amet, consectetur, adipisci velit, sed quia non
-                  numquam eius modi tempora incidunt ut labore et dolore magnam
-                  aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-                  nostrum exercitationem ullam corporis suscipit laboriosam,
-                  nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum
-                  iure reprehenderit qui in ea voluptate velit esse quam nihil
-                  molestiae consequatur, vel illum qui dolorem eum fugiat quo
-                  voluptas nulla pariatur?"
-                </p>
-              </div>
-            </div>
-            <div
-              id='carouselExample'
-              className='carousel slide mx-auto col-6 mb-4'
-            ></div>
-          </div>
-
-          <div className='col-3 text-center'>
-            <div>
-              <p className='lead'>
-                Visítanos y síguenos en nuestras redes sociales:
-              </p>
-            </div>
+          <div className='col-9'>
+            {content.map((item, index) => card(item, index))}
           </div>
         </div>
       </div>
