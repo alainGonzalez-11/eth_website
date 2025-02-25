@@ -12,7 +12,7 @@ const Footer = ({ data, services}) => {
             <img src={logo} alt="Logo" className="img-fluid me-3" style={{ maxWidth: "300px" }} />
           </div>
           <div className="col-md-6 text-md-end">
-            <a href={contactButton.link} className="btn btn-primary">
+            <a href={contactButton.link} className="btn btn-primary my-3 border border-rounded-0">
               {contactButton.label}
             </a>
           </div>
