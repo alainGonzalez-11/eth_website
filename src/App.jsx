@@ -61,7 +61,7 @@ function App () {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []); // Runs when headerRef.current changes
+  }, [headerRef.current]); // Runs when headerRef.current changes
 
 
 
