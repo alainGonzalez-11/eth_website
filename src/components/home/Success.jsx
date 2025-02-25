@@ -149,8 +149,8 @@ const Success = () => {
             <div className='carousel-inner d-flex p-2' ref={carouselInner}>
               {content.map((item, index) => card(item, index))}
             </div>
-            <Link to='/' className='btn btn-primary mt-4 px-6 rounded-0 text-light'>
-              Ver todos los servicios
+            <Link to='allcases' className='btn btn-primary mt-4 px-6 rounded-0 text-light'>
+              Ver todos los casos
             </Link>
             <button
               className='carousel-control-prev bg-dark'
