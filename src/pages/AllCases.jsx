@@ -31,7 +31,7 @@ const AllCases = () => {
     return newUrl
   }
 
-  if (!content1) return <div>Loading...</div>
+  if (!content1 || !content2) return <div>Loading...</div>
 
   const card = (item, index) => (
     <div key={index} className='d-md-flex mb-5'>

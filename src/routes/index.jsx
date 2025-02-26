@@ -7,11 +7,11 @@ const App = () => {
     <Routes>
       <Route path='/' element={<BasicPage />} />
       <Route path='/:pageUrl' element={<BasicPage />} />
-      <Route path="/services/:serviceUrl" element={<ServicePage />} /> Dynamic Service Page
-      <Route path='/allcases' element={<AllCases />} />
-      <Route path='/case' element={<Case />} />
+      <Route path="/services/:serviceUrl" element={<ServicePage />} />
+      {/* <Route path='/allcases' element={<AllCases />} /> */}
+      {/* <Route path='/case' element={<Case />} /> */}
       <Route path='/acercade' element={<About />} />
-      <Route path='/servicios' element={<Services />} />
+      {/* <Route path='/servicios' element={<BasicPage />} /> */}
       <Route path='/ourbrands' element={<OurBrands />} />
     </Routes>
   )
