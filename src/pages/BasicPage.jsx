@@ -7,28 +7,43 @@ import Success from '@/components/home/Success.jsx'
 import Contact from '@/components/home/Contact.jsx'
 import AllCases from '@/pages/AllCases.jsx'
 import Case from '@/pages/Case.jsx'
+import About from '@/pages/About.jsx'
+import OurBrands from '@/pages/OurBrands.jsx'
 
 const BasicPage = () => {
   const { pageUrl } = useParams() // Get dynamic URL parameter
   const [page, setPage] = useState(null)
 
   useEffect(() => {
-    console.log(`the site is ${pageUrl}`)
-    let path = pageUrl
-    if (pageUrl === undefined) {
-      path = ''
-    }
-    // https://cdn.contentful.com/spaces/0w7isqwzcsuy/environments/master/entries?access_token=bGyYPVBVyVHiyNPLSCDOqzM0T2HOV_qtdj11pSFcoo4&content_type=page&fields.url=%2F
-    const token = import.meta.env.VITE_ACCESS_TOKEN
-    const space = import.meta.env.VITE_CMS_SPACE
-    fetch(
-      `https://cdn.contentful.com/spaces/${space}/environments/master/entries?access_token=${token}&content_type=page&fields.url=%2F${path}`
-    )
-      .then(res => res.json())
-      .then(data => {
-        setPage(data)
+    console.log(`The site is ${pageUrl}`);
+  
+    let path = pageUrl ?? ""; // Use default empty string if undefined
+  
+    const token = import.meta.env.VITE_ACCESS_TOKEN;
+    const space = import.meta.env.VITE_CMS_SPACE;
+    const url = `https://cdn.contentful.com/spaces/${space}/environments/master/entries?access_token=${token}&content_type=page&fields.url=%2F${path}`;
+  
+    fetch(url)
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`API request failed with status ${res.status}`);
+        }
+        return res.json();
       })
-  }, [page?.id, pageUrl])
+      .then(data => {
+        if (!data || !data.items || data.items.length === 0) {
+          throw new Error("No results found for the requested page.");
+        }
+        setPage(data);
+      })
+      .catch(error => {
+        console.error("Error fetching page data:", error);
+        setPage(null); // Handle empty state
+      });
+  
+  }, [page?.id, pageUrl]);
+  
+  
 
   if (page === null) return <div>Loading...</div>
 
@@ -49,6 +64,10 @@ const BasicPage = () => {
         return <AllCases />
       case 'Case':
         return <Case />
+      case 'AboutUs':
+        return <About />
+      case 'OurBrands':
+        return <OurBrands />
       case 'image':
         return (
           <img

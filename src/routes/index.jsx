@@ -10,9 +10,9 @@ const App = () => {
       <Route path="/services/:serviceUrl" element={<ServicePage />} />
       {/* <Route path='/allcases' element={<AllCases />} /> */}
       {/* <Route path='/case' element={<Case />} /> */}
-      <Route path='/acercade' element={<About />} />
+      {/* <Route path='/acercade' element={<About />} /> */}
       {/* <Route path='/servicios' element={<BasicPage />} /> */}
-      <Route path='/ourbrands' element={<OurBrands />} />
+      {/* <Route path='/ourbrands' element={<OurBrands />} /> */}
     </Routes>
   )
 }

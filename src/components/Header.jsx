@@ -100,7 +100,7 @@ const Header = forwardRef((props, ref) => {
             <NavLink to='/servicios'>Servicios</NavLink>
           </li>
           <li className='m-4'>
-            <NavLink to='/ourBrands'>Nuestras marcas</NavLink>
+            <NavLink to='/marcas'>Nuestras marcas</NavLink>
           </li>
           <li className='m-4'>
             <NavLink to='/contacto' end>
