@@ -2,14 +2,22 @@ import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const AllCases = () => {
-  const [content, setContent] = useState(null)
+  const [content1, setContent1] = useState(null)
+  const [content2, setContent2] = useState(null)
 
   useEffect(() => {
     fetch('/success.json')
       .then(response => response.json())
-      .then(data => setContent(data.success))
+      .then(data => setContent1(data.success))
       .catch(error => console.error('Error loading content:', error))
-  }, [content])
+  }, [content1])
+
+  useEffect(() => {
+    fetch('/services.json')
+      .then(response => response.json())
+      .then(data => setContent2(data.services))
+      .catch(error => console.error('Error loading content:', error))
+  }, [content2])
 
   const ImportDrivePhoto = (driveUrl, height) => {
     const defaultUrl =
@@ -23,70 +31,77 @@ const AllCases = () => {
     return newUrl
   }
 
-  if (!content) return <div>Loading...</div>
+  if (!content1) return <div>Loading...</div>
+
+  const card = (item, index) => (
+    <div key={index} className='d-md-flex mb-5'>
+      <div className='mx-auto col-12 col-sm-10 col-md-3'>
+        <NavLink to='/case'>
+          <img
+            className='col-12'
+            src={ImportDrivePhoto(item.image, 600)}
+            alt='Imagen principal'
+          />
+        </NavLink>
+      </div>
+      <div className='row mx-0 mx-auto col-12 col-sm-10 col-md-8'>
+        <p className='text-uppercase fw-semibold mb-0'>Título</p>
+        <p className='small'>11 de febrero, 2025</p>
+        <div className='col-12'>
+          <p className='text-justify'>
+            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo."
+          </p>
+          <NavLink to='/case' className='btn btn-primary rounded-0 text-light'>
+            Leer más
+          </NavLink>
+        </div>
+      </div>
+    </div>
+  )
+
+  const services = (item, index) => (
+    <div key={index} className='footer-links'>
+      <p>
+        <a href='#' className='fw-semibold ms-3 mb-0'>
+          {item.name}
+        </a>
+      </p>
+    </div>
+  )
 
   return (
     <div>
-      <div className='text-center text-primary mt-5 mb-4'>
-        <h1 className='fw-bold '>Nuestros casos</h1>
-      </div>
-      <div className='mx-4 mb-5'>
+      <div className='mb-5'>
+        <div className='d-md-flex text-center text-md-start justify-content-end text-primary mb-4 '>
+          <h1 className='col-12 col-md-9 fw-bold'>Nuestros casos</h1>
+        </div>
+        <div className='m-3'>
+          <button
+            className='btn btn-outline-primary rounded-0 d-md-none'
+            type='button'
+            data-bs-toggle='collapse'
+            data-bs-target='.multi-collapse'
+            aria-expanded='false'
+            aria-controls='multiCollapseExample1 multiCollapseExample2'
+          >
+            Categorías
+          </button>
+          <div className='collapse multi-collapse' id='multiCollapseExample1'>
+            {content2.map((item, index) => services(item, index))}
+          </div>
+        </div>
         <div className='row mx-0'>
-          <div className='col-3'>
-            <p className='lead'>Categorías</p>
-            <ul>
-              <li className=''>Servicios de Mantenimiento</li>
-              <li className=''>Servicio Adicional</li>
-              <li className=''>Soluciones en la Nube</li>
-              <li className=''>Redes de Datos</li>
-              <li className=''>Ciberseguridad</li>
-              <li className=''>Instalaciones Eléctricas</li>
-              <li className=''>Consultoría en TIC</li>
-            </ul>
-          </div>
-          <div className='col-6'>
-            <div className='d-flex text-uppercase fw-semibold'>
-              <NavLink to='/case'>
-                <img
-                  className='col-8 col-sm-5 col-md-7 col-xl-12'
-                  src={ImportDrivePhoto(content[0].image, 600)}
-                  alt='Imagen principal'
-                />
-              </NavLink>
-              <p>Fecha de realizacion</p>
-              <p>Ubicación</p>
-              <div className='col-12'>
-                <p className='text-justify lead'>
-                  "Sed ut perspiciatis unde omnis iste natus error sit
-                  voluptatem accusantium doloremque laudantium, totam rem
-                  aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                  architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                  voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-                  sed quia consequuntur magni dolores eos qui ratione voluptatem
-                  sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-                  quia dolor sit amet, consectetur, adipisci velit, sed quia non
-                  numquam eius modi tempora incidunt ut labore et dolore magnam
-                  aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-                  nostrum exercitationem ullam corporis suscipit laboriosam,
-                  nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum
-                  iure reprehenderit qui in ea voluptate velit esse quam nihil
-                  molestiae consequatur, vel illum qui dolorem eum fugiat quo
-                  voluptas nulla pariatur?"
-                </p>
-              </div>
+          <div className='d-none d-md-block col-3'>
+            <p className='fw-bold mb-0'>Categorías</p>
+            <div className='link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover'>
+              {content2.map((item, index) => services(item, index))}
             </div>
-            <div
-              id='carouselExample'
-              className='carousel slide mx-auto col-6 mb-4'
-            ></div>
           </div>
-
-          <div className='col-3 text-center'>
-            <div>
-              <p className='lead'>
-                Visítanos y síguenos en nuestras redes sociales:
-              </p>
-            </div>
+          <div className='col-12 col-md-9'>
+            {content1.map((item, index) => card(item, index))}
           </div>
         </div>
       </div>
