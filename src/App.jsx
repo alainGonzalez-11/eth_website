@@ -50,6 +50,8 @@ function App() {
     const updateHeaderHeight = () => {
       if (headerRef.current) {
         setHeaderHeight(headerRef.current.offsetHeight);
+      } else {
+        setHeaderHeight(50);
       }
     };
 
@@ -57,7 +59,7 @@ function App() {
 
     window.addEventListener("resize", updateHeaderHeight);
     return () => window.removeEventListener("resize", updateHeaderHeight);
-  }, []);
+  }, [headerRef.current]);
 
   // Observe changes in header content & update height
   useEffect(() => {
