@@ -1,4 +1,4 @@
-import Allocates from '../components/ourBrands/allocates'
+import Allocates from '../components/ourBrands/Allocates'
 import Partners from '../components/ourBrands/Partners'
 
 const OurBrands = () => {
