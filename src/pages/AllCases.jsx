@@ -2,14 +2,22 @@ import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const AllCases = () => {
-  const [content, setContent] = useState(null)
+  const [content1, setContent1] = useState(null)
+  const [content2, setContent2] = useState(null)
 
   useEffect(() => {
     fetch('/success.json')
       .then(response => response.json())
-      .then(data => setContent(data.success))
+      .then(data => setContent1(data.success))
       .catch(error => console.error('Error loading content:', error))
-  }, [content])
+  }, [content1])
+
+  useEffect(() => {
+    fetch('/services.json')
+      .then(response => response.json())
+      .then(data => setContent2(data.services))
+      .catch(error => console.error('Error loading content:', error))
+  }, [content2])
 
   const ImportDrivePhoto = (driveUrl, height) => {
     const defaultUrl =
@@ -23,11 +31,11 @@ const AllCases = () => {
     return newUrl
   }
 
-  if (!content) return <div>Loading...</div>
+  if (!content1) return <div>Loading...</div>
 
   const card = (item, index) => (
-    <div key={index} className='d-flex mb-5'>
-      <div className='col-3'>
+    <div key={index} className='d-md-flex mb-5'>
+      <div className='mx-auto col-12 col-sm-10 col-md-3'>
         <NavLink to='/case'>
           <img
             className='col-12'
@@ -36,7 +44,7 @@ const AllCases = () => {
           />
         </NavLink>
       </div>
-      <div className='row mx-0 col-8'>
+      <div className='row mx-0 mx-auto col-12 col-sm-10 col-md-8'>
         <p className='text-uppercase fw-semibold mb-0'>Título</p>
         <p className='small'>11 de febrero, 2025</p>
         <div className='col-12'>
@@ -54,53 +62,46 @@ const AllCases = () => {
     </div>
   )
 
+  const services = (item, index) => (
+    <div key={index} className='footer-links'>
+      <p>
+        <a href='#' className='fw-semibold ms-3 mb-0'>
+          {item.name}
+        </a>
+      </p>
+    </div>
+  )
+
   return (
     <div>
-      <div className='mx-4 mb-5'>
-        <div className='text-primary mb-4 text-center'>
-          <h1 className='fw-bold'>Nuestros casos</h1>
+      <div className='mb-5'>
+        <div className='d-md-flex text-center text-md-start justify-content-end text-primary mb-4 '>
+          <h1 className='col-12 col-md-9 fw-bold'>Nuestros casos</h1>
+        </div>
+        <div className='m-3'>
+          <button
+            className='btn btn-outline-primary rounded-0 d-md-none'
+            type='button'
+            data-bs-toggle='collapse'
+            data-bs-target='.multi-collapse'
+            aria-expanded='false'
+            aria-controls='multiCollapseExample1 multiCollapseExample2'
+          >
+            Categorías
+          </button>
+          <div className='collapse multi-collapse' id='multiCollapseExample1'>
+            {content2.map((item, index) => services(item, index))}
+          </div>
         </div>
         <div className='row mx-0'>
-          <div className='col-3'>
+          <div className='d-none d-md-block col-3'>
             <p className='fw-bold mb-0'>Categorías</p>
-            <p className='fw-semibold ms-3 mb-0'>
-              Servicios de Mantenimiento
-              <p className='fw-normal ms-3 mb-0'>Mantenimiento Preventivo</p>
-              <p className='fw-normal ms-3 mb-0'>Mantenimiento Correctivo</p>
-            </p>
-            <p className='fw-semibold ms-3 mb-0'>
-              Servicio Adicional
-              <p className='fw-normal ms-3 mb-0'>Rama 1</p>
-              <p className='fw-normal ms-3 mb-0'>Rama 2</p>
-            </p>
-            <p className='fw-semibold ms-3 mb-0'>
-              Soluciones en la Nube
-              <p className='fw-normal ms-3 mb-0'>Rama 1</p>
-              <p className='fw-normal ms-3 mb-0'>Rama 2</p>
-            </p>
-            <p className='fw-semibold ms-3 mb-0'>
-              Redes de Datos
-              <p className='fw-normal ms-3 mb-0'>Rama 1</p>
-              <p className='fw-normal ms-3 mb-0'>Rama 2</p>
-            </p>
-            <p className='fw-semibold ms-3 mb-0'>
-              Ciberseguridad
-              <p className='fw-normal ms-3 mb-0'>Rama 1</p>
-              <p className='fw-normal ms-3 mb-0'>Rama 2</p>
-            </p>
-            <p className='fw-semibold ms-3 mb-0'>
-              Instalaciones Eléctricas
-              <p className='fw-normal ms-3 mb-0'>Rama 1</p>
-              <p className='fw-normal ms-3 mb-0'>Rama 2</p>
-            </p>
-            <p className='fw-semibold ms-3 mb-0'>
-              Consultoría en TIC
-              <p className='fw-normal ms-3 mb-0'>Rama 1</p>
-              <p className='fw-normal ms-3 mb-0'>Rama 2</p>
-            </p>
+            <div className='link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover'>
+              {content2.map((item, index) => services(item, index))}
+            </div>
           </div>
-          <div className='col-9'>
-            {content.map((item, index) => card(item, index))}
+          <div className='col-12 col-md-9'>
+            {content1.map((item, index) => card(item, index))}
           </div>
         </div>
       </div>

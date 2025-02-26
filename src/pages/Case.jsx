@@ -5,7 +5,6 @@ const Case = () => {
   return (
     <div>
       <Banner/>
-      <Success/>
     </div>
   )
 }

@@ -2,13 +2,21 @@ import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const Banner = () => {
-  const [content, setContent] = useState(null)
+  const [content1, setContent1] = useState(null)
+  const [content2, setContent2] = useState(null)
 
   useEffect(() => {
     fetch('/blog.json')
       .then(response => response.json())
-      .then(data => setContent(data.banner))
+      .then(data => setContent1(data.banner))
       .catch(error => console.error('Error loading content:', error))
+  }, [])
+
+  useEffect(() => {
+    fetch('/success.json')
+      .then(response => response.json())
+      .then(data => setContent2(data.success))
+      .catch(error => console.error('Error loading success cases:', error))
   }, [])
 
   const ImportDrivePhoto = (driveUrl, height) => {
@@ -23,14 +31,59 @@ const Banner = () => {
     return newUrl
   }
 
-  if (!content) return <div>Loading...</div>
+  if (!content1) return <div>Loading...</div>
+
+  const card = (item, index) => (
+    <div
+      key={index}
+      className='carousel-item-success col-12 col-md-6 col-lg-4 d-block active mx-0'
+    >
+      <div className='card shadow m-2 mx-auto col-12 col-sm-9 col-md-11 col-xxl-9'>
+        <div className='ratio ratio-4x3'>
+          <div className='row justify-content-center mx-auto'>
+            <div className='h-25 py-3'>
+              <img
+                src={ImportDrivePhoto(item.logo, 250)}
+                className='object-fit-contain h-100'
+                alt={item.name}
+              />
+            </div>
+            <div className='h-75 w-100'>
+              <img
+                src={ImportDrivePhoto(item.image, 250)}
+                className='img-fluid object-fit-cover h-100 w-100'
+                alt='Imagen principal'
+              />
+            </div>
+          </div>
+        </div>
+        <div className='ratio ratio-4x3'>
+          <div className='card-body d-flex flex-column pt-2 pb-1'>
+            <h5 className='card-title'>{item.projectName}</h5>
+            <h6 className='card-subtitle'>{item.location}</h6>
+            <div className='overflow-auto h-75'>
+              <p className='card-text text-justify'>{item.description}</p>
+            </div>
+            <div className='d-flex justify-content-center my-auto'>
+              <a
+                href='/case'
+                className='btn btn-primary text-light rounded-0 my-1'
+              >
+                {item.button}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 
   return (
     <div>
       <div
         className='position-relative'
         style={{
-          backgroundImage: `url(${content.backgroundImage})`,
+          backgroundImage: `url(${content1.backgroundImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           height: '400px'
@@ -137,12 +190,7 @@ const Banner = () => {
               </button>
             </div>
             <div className='row justify-content-center'>
-              <div className='col-auto'>
-                <a className='btn btn-primary'>Caso previo</a>
-              </div>
-              <div className='col-auto'>
-                <a className='btn btn-primary'>Siguiente caso</a>
-              </div>
+            {content2.map((item, index) => card(item, index))}
             </div>
           </div>
 
@@ -153,20 +201,20 @@ const Banner = () => {
               </p>
 
               <div className='row justify-content-center my-1 col-12'>
-                <a href={content.link1} target='_blank' className='px-0 col-2'>
+                <a href={content1.link1} target='_blank' className='px-0 col-2'>
                   <img
                     className='col-8 col-sm-5 col-md-7 col-xl-12'
-                    src={ImportDrivePhoto(content.social1, 600)}
+                    src={ImportDrivePhoto(content1.social1, 600)}
                     alt='Imagen principal'
                   />
                 </a>
               </div>
 
               <div className='row justify-content-center my-1 col-12'>
-                <a href={content.link2} target='_blank' className='px-0 col-2'>
+                <a href={content1.link2} target='_blank' className='px-0 col-2'>
                   <img
                     className='col-8 col-sm-5 col-md-7 col-xl-12'
-                    src={ImportDrivePhoto(content.social2, 600)}
+                    src={ImportDrivePhoto(content1.social2, 600)}
                     alt='Imagen principal'
                   />
                 </a>
