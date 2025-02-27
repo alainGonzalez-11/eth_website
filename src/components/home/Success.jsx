@@ -23,6 +23,7 @@ const Success = () => {
       setPageWidth(window.innerWidth)
     }
     window.addEventListener('resize', handleResize)
+    setPageWidth(window.innerWidth)
   }, [])
 
   useEffect(() => {
