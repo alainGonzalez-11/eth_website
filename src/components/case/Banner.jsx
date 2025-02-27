@@ -33,6 +33,7 @@ const Banner = () => {
 
   if (!content1 || !content2) return <div>Loading...</div>
 
+  {/*
   const card = (item, index) => (
     <div
       key={index}
@@ -77,6 +78,7 @@ const Banner = () => {
       </div>
     </div>
   )
+    */}
 
   return (
     <div>
@@ -190,7 +192,6 @@ const Banner = () => {
               </button>
             </div>
             <div className='row justify-content-center'>
-            {content2.slice(2).map((item, index) => card(item, index))}
             </div>
           </div>
 
