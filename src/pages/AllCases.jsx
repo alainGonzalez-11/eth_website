@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const AllCases = () => {
-  const [content1, setContent1] = useState(null)
-  const [content2, setContent2] = useState(null)
+  const [content1, setContent1] = useState([])
+  const [content2, setContent2] = useState([])
 
   useEffect(() => {
     fetch('/success.json')
@@ -35,7 +35,7 @@ const AllCases = () => {
 
   const card = (item, index) => (
     <div key={index} className='d-md-flex mb-5'>
-      <div className='mx-auto col-12 col-sm-10 col-md-3'>
+      <div className='mx-auto col-12 col-sm-10 col-md-5 col-lg-4 col-xl-3'>
         <NavLink to='/case'>
           <img
             className='col-12'
@@ -44,11 +44,11 @@ const AllCases = () => {
           />
         </NavLink>
       </div>
-      <div className='row mx-0 mx-auto col-12 col-sm-10 col-md-8'>
+      <div className='row mx-0 mx-auto col-12 col-sm-10 col-md-7 col-lg-8 col-xl-9'>
         <p className='text-uppercase fw-semibold mb-0'>Título</p>
         <p className='small'>11 de febrero, 2025</p>
         <div className='col-12'>
-          <p className='text-justify'>
+          <p className='text-justify text-truncate d-md-block'>
             "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -78,7 +78,7 @@ const AllCases = () => {
         <div className='d-md-flex text-center text-md-start justify-content-end text-primary mb-4 '>
           <h1 className='col-12 col-md-9 fw-bold'>Nuestros casos</h1>
         </div>
-        <div className='m-3'>
+        <div className='m-3 col-sm-9 mx-sm-auto'>
           <button
             className='btn btn-outline-primary rounded-0 d-md-none'
             type='button'
@@ -96,9 +96,9 @@ const AllCases = () => {
         <div className='row mx-0'>
           <div className='d-none d-md-block col-3'>
             <p className='fw-bold mb-0'>Categorías</p>
-            <div className='link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover'>
+
               {content2.map((item, index) => services(item, index))}
-            </div>
+
           </div>
           <div className='col-12 col-md-9'>
             {content1.map((item, index) => card(item, index))}
