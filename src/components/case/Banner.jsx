@@ -36,7 +36,7 @@ const Banner = () => {
   const card = (item, index) => (
     <div
       key={index}
-      className='carousel-item-success col-12 col-md-6 col-lg-4 d-block active mx-0'
+      className='col-12 col-md-6 col-lg-4 d-block active mx-0'
     >
       <div className='card shadow m-2 mx-auto col-12 col-sm-9 col-md-11 col-xxl-9'>
         <div className='ratio ratio-4x3'>
@@ -190,7 +190,7 @@ const Banner = () => {
               </button>
             </div>
             <div className='row justify-content-center'>
-            {content2.map((item, index) => card(item, index))}
+            {content2.slice(2).map((item, index) => card(item, index))}
             </div>
           </div>
 
