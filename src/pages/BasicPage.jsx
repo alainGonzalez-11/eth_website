@@ -5,6 +5,7 @@ import ServicesSection from '@/components/home/ServicesSection.jsx'
 import ClientsSection from '@/components/home/ClientsSection.jsx'
 import Success from '@/components/home/Success.jsx'
 import Contact from '@/components/home/Contact.jsx'
+import Contribute from '@/components/home/Contribute.jsx'
 import AllCases from '@/pages/AllCases.jsx'
 import Case from '@/pages/Case.jsx'
 import About from '@/pages/About.jsx'
@@ -60,6 +61,8 @@ const BasicPage = () => {
         return <Success />
       case 'Contact':
         return <Contact />
+        case 'Contribute':
+          return <Contribute />
       case 'AllCases':
         return <AllCases />
       case 'Case':
