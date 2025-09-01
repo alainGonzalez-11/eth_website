@@ -61,11 +61,11 @@ const Header = forwardRef((props, ref) => {
       className='navbar navbar-expand-lg navbar-dark bg-dark-subtle py-1 px-5 container-fluid d-flex justify-content-between align-items-center content fixed-top'
       ref={ref}
     >
-      <Link to='/' className='my-2 col-8 col-sm-7 col-lg-3'>
+      <Link to='/' className='my-0 col-8 col-sm-7 col-lg-3'>
         <img
-          src={ImportDrivePhoto(info.data[0].logo, 600)}
+          src={'https://images.ctfassets.net/0w7isqwzcsuy/2rUz7rRJvR9lCrAa3Um6xO/07c094a1a7dbb639f62ffb09513c6a58/Logo2.png'}
           alt={info.data[0].name}
-          className='w-100'
+          className='w-50'
         />
       </Link>
 

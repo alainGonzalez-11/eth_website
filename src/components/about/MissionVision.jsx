@@ -20,7 +20,7 @@ const MissionVision = () => {
         {/* Mission Section */}
         <Col lg={6} className="d-flex flex-column align-items-center">
           <div className="mb-3">
-            <i className="bi bi-flag-fill text-primary" style={{ fontSize: '2rem' }}></i>
+            <i className="bi bi-flag-fill text-secondary" style={{ fontSize: '2rem' }}></i>
           </div>
           <h3 className="fw-bold">{content.mission.title}</h3>
           <p>{content.mission.description}</p>
@@ -29,7 +29,7 @@ const MissionVision = () => {
         {/* Vision Section */}
         <Col lg={6} className="d-flex flex-column align-items-center">
           <div className="mb-3">
-            <i className="bi bi-eye-fill text-success" style={{ fontSize: '2rem' }}></i>
+            <i className="bi bi-eye-fill text-secondary" style={{ fontSize: '2rem' }}></i>
           </div>
           <h3 className="fw-bold">{content.vision.title}</h3>
           <p>{content.vision.description}</p>

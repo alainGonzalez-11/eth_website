@@ -2,7 +2,8 @@
 @import '../node_modules/bootstrap/scss/functions';
 @import '../node_modules/bootstrap/scss/variables';
 $custome-theme-colors: (
-  'primary': #00b050
+  'primary': #0A2E5C,
+  'secondary': #F57C00,
 );
 $theme-colors: map-merge($theme-colors, $custome-theme-colors);
 

@@ -1,48 +1,58 @@
 {
   "banner": {
-    "title": "Acerca de ETH Soluciones",
-    "slug": "Somos Especialistas en...",
-    "description": "Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed. Commodo in viverra nunc, ullamcorper ut. Non, amet, aliquet scelerisque nullam sagittis, pulvinar. ",
-    "buttonText": "Desccubre nuestra historia",
+    "title": "Acerca de SIMEQ",
+    "slug": "Confianza y eficiencia en movimiento",
+    "description": "SIMEQ — Soluciones de Ingeniería y Mantenimiento de México. Somos una empresa mexicana B2B que garantiza la continuidad operativa de plantas e instalaciones mediante ingeniería, mantenimiento preventivo/correctivo y automatización. Unimos precisión mecánica con energía confiable para reducir paros, elevar la seguridad y optimizar costos.",
+    "buttonText": "Descubre nuestra historia",
     "buttonLink": "#historia",
     "backgroundImages": [
-      "/home/banner_2.jpg"
+      "/home/simeq_banner.jpg"
     ],
-    "logo": "logo_basic.png"
+    "logo": "logo_simeq_horizontal.png"
   },
   "missionVision": {
     "mission": {
       "title": "Nuestra Misión",
-      "description": "Brindar soluciones innovadoras y sostenibles que impulsen el desarrollo de las personas, las comunidades y las organizaciones."
+      "description": "Brindar soluciones de ingeniería y mantenimiento que aseguren la continuidad, seguridad y eficiencia de las operaciones industriales en México, mediante innovación, calidad y equipos altamente especializados."
     },
     "vision": {
       "title": "Nuestra Visión",
-      "description": "Ser líderes reconocidos por nuestra capacidad para transformar ideas en realidades que generen impacto positivo a largo plazo."
+      "description": "Ser la empresa mexicana líder en ingeniería y mantenimiento industrial en América Latina para 2035, referente en innovación, sostenibilidad y satisfacción del cliente."
     }
   },
   "valuesSection": {
     "title": "Nuestros Valores",
-    "image": "/home/banner_2.jpg",
+    "image": "/home/simeq_valores.jpg",
     "values": [
       {
-        "icon": "bi-heart",
-        "title": "Integridad",
-        "description": "Actuamos con honestidad y transparencia en cada aspecto de nuestro trabajo."
+        "icon": "bi-shield-check",
+        "title": "Seguridad",
+        "description": "Operamos con protocolos estrictos para proteger a las personas, los activos y el entorno."
+      },
+      {
+        "icon": "bi-award",
+        "title": "Calidad",
+        "description": "Estandarizamos procesos y medimos resultados para asegurar entregables consistentes."
+      },
+      {
+        "icon": "bi-lightning-charge",
+        "title": "Confiabilidad",
+        "description": "Diseñamos y mantenemos sistemas para minimizar paros y maximizar la disponibilidad."
+      },
+      {
+        "icon": "bi-gear",
+        "title": "Innovación",
+        "description": "Aplicamos IoT, analítica y automatización para crear ventajas operativas reales."
       },
       {
         "icon": "bi-people",
         "title": "Colaboración",
-        "description": "Creemos en el poder del trabajo en equipo para alcanzar metas comunes."
-      },
-      {
-        "icon": "bi-lightbulb",
-        "title": "Innovación",
-        "description": "Fomentamos la creatividad y el pensamiento disruptivo para crear soluciones únicas."
+        "description": "Trabajamos como una sola cuadrilla con nuestros clientes y proveedores."
       },
       {
         "icon": "bi-globe",
         "title": "Sostenibilidad",
-        "description": "Nos comprometemos a construir un futuro más responsable y equilibrado."
+        "description": "Impulsamos eficiencia energética y prácticas responsables en cada proyecto."
       }
     ]
   },
@@ -50,24 +60,34 @@
     "title": "Nuestra Historia",
     "timeline": [
       {
-        "image": "/services/service_example.jpg",
-        "year": "2000",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel arcu in neque euismod varius. Sed placerat, orci nec bibendum dictum, sapien libero dapibus lacus, at hendrerit lorem justo ut erat."
+        "image": "/history/2010_monterrey.jpg",
+        "year": "2010",
+        "description": "Nacemos en Monterrey, N.L., ofreciendo mantenimiento preventivo a plantas manufactureras locales."
       },
       {
-        "image": "/services/service_example2.jpg",
-        "year": "2005",
-        "description": "Suspendisse potenti. Aenean vel tortor non mauris pretium aliquet. Integer fringilla nisl sed lectus pulvinar, nec interdum nulla ultricies. Curabitur tempus orci in felis gravida, vitae vestibulum elit facilisis."
+        "image": "/history/2015_expansion.jpg",
+        "year": "2015",
+        "description": "Expandimos servicios a ingeniería industrial, rediseño de plantas y eficiencia energética."
       },
       {
-        "image": "/services/service_example.jpg",
-          "year": "2010",
-        "description": "Nullam auctor turpis ac velit feugiat, vel sollicitudin turpis feugiat. Phasellus ac nisi lacus. Pellentesque ac arcu vitae lorem suscipit dignissim."
+        "image": "/history/2018_automatizacion.jpg",
+        "year": "2018",
+        "description": "Creamos el frente de Automatización: integración SCADA, sensorización e instrumentación."
       },
       {
-        "image": "/services/service_example2.jpg",
+        "image": "/history/2020_monitoreo.jpg",
         "year": "2020",
-        "description": "Fusce non libero ac ipsum vehicula aliquet. Sed at ultricies odio. Nulla a bibendum dolor. Nam facilisis elit at purus blandit gravida."
+        "description": "Lanzamos plataforma propia de monitoreo predictivo con IoT para reducir fallas críticas."
+      },
+      {
+        "image": "/history/2023_cobertura.jpg",
+        "year": "2023",
+        "description": "Alcanzamos cobertura nacional y acuerdos con proveedores internacionales estratégicos."
+      },
+      {
+        "image": "/history/2025_hitos.jpg",
+        "year": "2025",
+        "description": "Consolidamos portafolio integral: mantenimiento, ingeniería civil/mecánica, energía y automatización."
       }
     ]
   }
