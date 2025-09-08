@@ -4,63 +4,43 @@
   },
   "success": [
       {
-        "projectName": "Nombre del proyecto",
-        "name": "Altair",
+        "projectName": "Sistema de Monitoreo Predictivo",
+        "name": "Planta Automotriz Global Motors",
         "page": "https://altair.com/altair-mexico",
         "logo": "https://drive.google.com/file/d/1QwX-GfjzYHHiLYDTqktVpiaXpktHCfK6/view?usp=drive_link",
-        "image": "https://drive.google.com/file/d/13cwyWv5OHlCxPJGBiznozW_BsKoWesq5/view?usp=drive_link",
-        "description":"Altair, líder mundial en inteligencia computacional, nos proporciona herramientas para analizar y optimizar proyectos, además de recursos para aprender a usar sus softwares de simulación, HPC e IA. La empresa también ofrece soluciones para diversas industrias, como la automotriz, aeroespacial y la manufactura, ayudándoles a innovar, mejorar la eficiencia y reducir el impacto ambiental. Su objetivo es impulsar la innovación y decisiones inteligentes a través de la ciencia computacional, creando un futuro más conectado y sostenible.",
-        "location": "Ubicación",
+        "image": "/cases/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL2ZsNTAyMTEwMzU4MjgtaW1hZ2UuanBn.webp",
+        "description":"Implementamos un sistema IoT de monitoreo predictivo en equipos críticos de la línea de ensamble, reduciendo paros no programados en un 40% y mejorando la disponibilidad operativa.",
+        "location": "Saltillo, Coahuila",
         "button": "Ver más"
       },
       {
-        "projectName": "Nombre del proyecto",
-        "name": "Altair",
+        "projectName": "Optimización Energética en Planta de Alimentos",
+        "name": "NutriMex S.A. de C.V.",
         "page": "https://altair.com/altair-mexico",
         "logo": "https://drive.google.com/file/d/1OE4cHXytHW_Khu-rG8OPDqra9PwVBvnf/view?usp=drive_link",
-        "image": "https://drive.google.com/file/d/1ymKP5ws_AZBs0LQzXFBudOZL6XWNb1iO/view?usp=drive_link",
-        "description":"Altair, líder mundial en inteligencia computacional, nos proporciona herramientas para analizar y optimizar proyectos, además de recursos para aprender a usar sus softwares de simulación, HPC e IA. La empresa también ofrece soluciones para diversas industrias, como la automotriz, aeroespacial y la manufactura, ayudándoles a innovar, mejorar la eficiencia y reducir el impacto ambiental. Su objetivo es impulsar la innovación y decisiones inteligentes a través de la ciencia computacional, creando un futuro más conectado y sostenible.",
-        "location": "Ubicación",
+        "image": "/cases/meal-food-cooking-industrial-cook-product-winery-packing-food-processing-sense-culinary-art-708100.jpg",
+        "description":"Realizamos una auditoría energética y rediseño de sistemas eléctricos, logrando un ahorro anual del 25% en consumo eléctrico mediante integración de paneles solares y mejoras en distribución.",
+        "location": "Guadalajara, Jalisco",
         "button": "Ver más"
       },
       {
-        "projectName": "Nombre del proyecto",
-        "name": "Altair",
+        "projectName": "Remodelación de Infraestructura Industrial",
+        "name": "Construcciones del Norte",
         "page": "https://altair.com/altair-mexico",
         "logo": "https://drive.google.com/file/d/1dk4dlKDU8MefZmQv54rsCys6C7wu_vpZ/view?usp=drive_link",
-        "image": "https://drive.google.com/file/d/1pcMe8xSuvtE__opyLjq2BDZr7ml0sUln/view?usp=sharing",
-        "description":"Altair, líder mundial en inteligencia computacional, nos proporciona herramientas para analizar y optimizar proyectos, además de recursos para aprender a usar sus softwares de simulación, HPC e IA. La empresa también ofrece soluciones para diversas industrias, como la automotriz, aeroespacial y la manufactura, ayudándoles a innovar, mejorar la eficiencia y reducir el impacto ambiental. Su objetivo es impulsar la innovación y decisiones inteligentes a través de la ciencia computacional, creando un futuro más conectado y sostenible.",
-        "location": "Ubicación",
+        "image": "/cases/transport-construction-vehicle-mast-industry-port-775724-pxhere.com.jpg",
+        "description":"Ejecutamos la ampliación y reforzamiento estructural de una nave industrial de 12,000 m², asegurando el cumplimiento con normativas de seguridad y optimizando el flujo de producción.",
+        "location": "Monterrey, Nuevo León",
         "button": "Ver más"
       },
       {
-        "projectName": "Nombre del proyecto",
-        "name": "Altair",
+        "projectName": "Instalación de Sistemas HVAC y Tuberías",
+        "name": "PharmaTech México",
         "page": "https://altair.com/altair-mexico",
         "logo": "https://drive.google.com/file/d/1dk4dlKDU8MefZmQv54rsCys6C7wu_vpZ/view?usp=drive_link",
-        "image": "https://drive.google.com/file/d/1FOPnR4tW1TxqlI6uzb4-lSEeq4-5V16Y/view?usp=drive_link",
-        "description":"Altair, líder mundial en inteligencia computacional, nos proporciona herramientas para analizar y optimizar proyectos, además de recursos para aprender a usar sus softwares de simulación, HPC e IA. La empresa también ofrece soluciones para diversas industrias, como la automotriz, aeroespacial y la manufactura, ayudándoles a innovar, mejorar la eficiencia y reducir el impacto ambiental. Su objetivo es impulsar la innovación y decisiones inteligentes a través de la ciencia computacional, creando un futuro más conectado y sostenible.",
-        "location": "Ubicación",
-        "button": "Ver más"
-      },
-      {
-        "projectName": "Nombre del proyecto",
-        "name": "Altair",
-        "page": "https://altair.com/altair-mexico",
-        "logo": "https://drive.google.com/file/d/1dk4dlKDU8MefZmQv54rsCys6C7wu_vpZ/view?usp=drive_link",
-        "image": "https://drive.google.com/file/d/1FOPnR4tW1TxqlI6uzb4-lSEeq4-5V16Y/view?usp=drive_link",
-        "description":"Altair, líder mundial en inteligencia computacional, nos proporciona herramientas para analizar y optimizar proyectos, además de recursos para aprender a usar sus softwares de simulación, HPC e IA. La empresa también ofrece soluciones para diversas industrias, como la automotriz, aeroespacial y la manufactura, ayudándoles a innovar, mejorar la eficiencia y reducir el impacto ambiental. Su objetivo es impulsar la innovación y decisiones inteligentes a través de la ciencia computacional, creando un futuro más conectado y sostenible.",
-        "location": "Ubicación",
-        "button": "Ver más"
-      },
-      {
-        "projectName": "Nombre del proyecto",
-        "name": "Altair",
-        "page": "https://altair.com/altair-mexico",
-        "logo": "https://drive.google.com/file/d/1dk4dlKDU8MefZmQv54rsCys6C7wu_vpZ/view?usp=drive_link",
-        "image": "https://drive.google.com/file/d/1FOPnR4tW1TxqlI6uzb4-lSEeq4-5V16Y/view?usp=drive_link",
-        "description":"Altair, líder mundial en inteligencia computacional, nos proporciona herramientas para analizar y optimizar proyectos, además de recursos para aprender a usar sus softwares de simulación, HPC e IA. La empresa también ofrece soluciones para diversas industrias, como la automotriz, aeroespacial y la manufactura, ayudándoles a innovar, mejorar la eficiencia y reducir el impacto ambiental. Su objetivo es impulsar la innovación y decisiones inteligentes a través de la ciencia computacional, creando un futuro más conectado y sostenible.",
-        "location": "Ubicación",
+        "image": "caso_exito_hvac_pharma.jpg",
+        "description":"Diseñamos e instalamos sistemas de climatización y tuberías sanitarias de alta precisión para una planta farmacéutica, garantizando condiciones de esterilidad y eficiencia en procesos.",
+        "location": "Querétaro, Qro.",
         "button": "Ver más"
       }
     ]

@@ -128,7 +128,7 @@ const Contact = () => {
 
               <div className='d-flex flex-column col-12'>
                 <label htmlFor='organization'>
-                  Empresa u organizacion (Opcional)
+                  Empresa u Organizacion (Opcional)
                 </label>
                 <input
                   type='text'
@@ -144,7 +144,7 @@ const Contact = () => {
               </div>
 
               <div className='d-flex flex-column col-12'>
-                <label htmlFor='email'>Correo</label>
+                <label htmlFor='email'>Correo electrónico</label>
                 <input
                   type='text'
                   name='email'

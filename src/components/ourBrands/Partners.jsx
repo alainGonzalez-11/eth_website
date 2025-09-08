@@ -32,7 +32,7 @@ const Partners = () => {
       <div className='h-25 w-auto py-2'>
         <a href={item.page} target='_blank'>
           <img
-            src={ImportDrivePhoto(item.logo, 120)}
+            src={item.logo}
             className='img-fluid px-md-0'
             alt={item.name}
           />
@@ -51,24 +51,19 @@ const Partners = () => {
             </h2>
             <img
               className='d-md-none col-12'
-              src={ImportDrivePhoto(content.partners.image, 600)}
+              src={content.partners.image}
               alt='Imagen principal'
             />
             <p className='text-justify lead'>
-              "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-              velit, sed quia non numquam eius modi tempora incidunt ut labore
-              et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
-              veniam, quis nostrum exercitationem ullam corporis suscipit
-              laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
-              vel eum iure reprehenderit qui in ea voluptate velit esse quam
-              nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-              voluptas nulla pariatur?"
+              El crecimiento de SIMEQ ha sido posible gracias a alianzas con
+              empresas y organizaciones que comparten nuestra visión de
+              excelencia y compromiso con la industria en México. Estas
+              colaboraciones estratégicas nos permiten complementar nuestros
+              servicios, ampliar capacidades y ofrecer soluciones integrales
+              adaptadas a las necesidades del mercado nacional.
+              👉 Juntos
+              impulsamos proyectos sólidos que generan valor para la industria
+              mexicana.
             </p>
             <div className='row mx-0 justify-content-center align-items-center'>
               {content.brands2.map((item, index) => logos(item, index))}
@@ -77,7 +72,7 @@ const Partners = () => {
           <div className='d-none d-md-flex align-items-center col-md-6'>
             <img
               className='col-12'
-              src={ImportDrivePhoto(content.partners.image, 600)}
+              src={content.partners.image}
               alt='Imagen principal'
             />
           </div>

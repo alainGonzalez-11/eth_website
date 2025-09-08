@@ -2,54 +2,59 @@
   "brands": {
     "allocates": {
       "description": "something",
-      "image": "https://drive.google.com/file/d/1-ACyMHoVQ9RhebeJTxUMfJBHnJdYWCTx/view?usp=drive_link"
+      "image": "/brands/transport-vehicle-factory-shelf-package-warehouse-manufacturing-stock-trade-logistics-factory-building-industrial-hall-inventory-construction-equipment-forklift-.jpg"
     },
     "brands1": [
       {
-        "name": "allocate1",
-        "page": "https://altair.com/altair-mexico",
-        "logo": "https://drive.google.com/file/d/12-0elAAlFStb9ab2bVZsbNATnbUZHE_y/view?usp=drive_link"
+        "name": "Siemens",
+        "page": "https://www.siemens.com/mx/es.html",
+        "logo": "/brands/siemens.png"
       },
       {
-        "name": "allocate2",
-        "page": "https://altair.com/altair-mexico",
-        "logo": "https://drive.google.com/file/d/12-0elAAlFStb9ab2bVZsbNATnbUZHE_y/view?usp=drive_link"
+        "name": "Schneider Electric",
+        "page": "https://www.se.com/mx/es/",
+        "logo": "/brands/Schneider-Electric-Logo.jpg"
       },
       {
-        "name": "allocate3",
-        "page": "https://altair.com/altair-mexico",
-        "logo": "https://drive.google.com/file/d/12-0elAAlFStb9ab2bVZsbNATnbUZHE_y/view?usp=drive_link"
+        "name": "ABB",
+        "page": "https://new.abb.com/mx",
+        "logo": "/brands/logo-ABB.png"
       },
       {
-        "name": "partner2",
-        "page": "https://altair.com/altair-mexico",
-        "logo": "https://drive.google.com/file/d/1Cxu_DaVZ0S-S33FCaYLwjTT-93xshvtt/view?usp=drive_link"
+        "name": "Honeywell",
+        "page": "https://www.honeywell.com/mx/es",
+        "logo": "/brands/Honeywell-logo-300x173.png"
       },
       {
-        "name": "partner3",
-        "page": "https://altair.com/altair-mexico",
-        "logo": "https://drive.google.com/file/d/1Cxu_DaVZ0S-S33FCaYLwjTT-93xshvtt/view?usp=drive_link"
+        "name": "3M",
+        "page": "https://www.3m.com.mx/3M/es_MX/inicio/",
+        "logo": "/brands/3M-1.webp"
       }
     ],
     "partners": {
       "description": "something",
-      "image": "https://drive.google.com/file/d/15Fu8MVYW5m6eKJ0rJwlRnA8a39v_R10F/view?usp=drive_link"
+      "image": "/brands/the-us-army-corps-of-engineers-far-east-district-0d9d4f-1024.jpg"
     },
     "brands2": [
       {
-        "name": "partner1",
-        "page": "https://altair.com/altair-mexico",
-        "logo": "https://drive.google.com/file/d/1Cxu_DaVZ0S-S33FCaYLwjTT-93xshvtt/view?usp=drive_link"
+        "name": "Cemex",
+        "page": "https://www.cemexmexico.com/",
+        "logo": "/brands/--8F3Ts3_400x400.jpg"
       },
       {
-        "name": "partner2",
-        "page": "https://altair.com/altair-mexico",
-        "logo": "https://drive.google.com/file/d/1Cxu_DaVZ0S-S33FCaYLwjTT-93xshvtt/view?usp=drive_link"
+        "name": "Grupo Bimbo",
+        "page": "https://www.grupobimbo.com/es/inicio",
+        "logo": "/brands/Grupo-bimbo-logo.png"
       },
       {
-        "name": "partner3",
-        "page": "https://altair.com/altair-mexico",
-        "logo": "https://drive.google.com/file/d/1Cxu_DaVZ0S-S33FCaYLwjTT-93xshvtt/view?usp=drive_link"
+        "name": "Grupo Alfa",
+        "page": "https://www.alfa.com.mx/",
+        "logo": "/brands/ALFA_logo.svg.png"
+      },
+      {
+        "name": "Ternium",
+        "page": "https://mx.ternium.com/es",
+        "logo": "/brands/Ternium_Logo.svg.png"
       }
     ]
   }

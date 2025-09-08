@@ -114,7 +114,7 @@ const Success = () => {
             </div>
             <div className='h-75 w-100'>
               <img
-                src={ImportDrivePhoto(item.image, 250)}
+                src={item.image}
                 className='img-fluid object-fit-cover h-100 w-100'
                 alt='Imagen principal'
               />
